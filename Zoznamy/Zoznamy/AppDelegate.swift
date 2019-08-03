@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -52,7 +53,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //popisky
         UILabel.appearance().textColor = .white
+        
+        
+        //realm migration
+        //pri uprave databazy
+        //ak nieco zmenime v databaze tak treba zmenit verziu na vyššie číslo aj v podmienke
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in
+                if (oldSchemaVersion < 1){
+            }
+        })
     
+        Realm.Configuration.defaultConfiguration = config
+        let realm = try! Realm()
+        //koniec upravy pre databazy
  
         return true
     }
