@@ -1,0 +1,169 @@
+//
+//  RealmManager.swift
+//  Zoznamy
+//
+//  Created by Martin Kostelej on 20/07/2019.
+//  Copyright © 2019 Martin Kostelej. All rights reserved.
+//
+
+
+//pre pracu s datami
+//napriklad pridaj zoznam, pridaj prvok do zoznamu, uprav zoznam, uprav prvok, zmaz zoznam...
+import RealmSwift
+
+class RealmManager {
+    
+    func allLists() ->Results<Lists>{
+        //inicializacia realmu
+        let realm = try! Realm()
+        
+        let lists = realm.objects(Lists.self).sorted(byKeyPath: "date", ascending: false)
+        return lists
+    }
+    
+    //skusobne
+    func getList(name: String) ->Lists?{
+        let realm = try! Realm()
+        //let lists = realm.objects(Lists.self)
+        //let pocet = lists.count
+        let lists = realm.objects(Lists.self).filter("name = %@", name)
+        if lists.count > 0{
+            return lists[0]
+        }
+        return nil
+    }
+    
+    //skusobne
+    func allItemsOfList(list: Lists) ->Results<Item>{
+        let items = list.items.sorted(byKeyPath: "date", ascending: false)
+        return items
+    }
+    
+    //overovanie ci uz zoznam existuje
+    //ak existuje tak ho vrati inak vrati nil
+    func listDoesExists(list: Lists) -> Lists? {
+        let realm = try! Realm()
+        let lists = realm.objects(Lists.self).filter("name = %@", list.name)
+        if lists.count > 0{
+            return lists[0]
+        }
+        return nil
+    }
+    
+    //skusobne
+    //overuje ci existuje prvok v zozname
+    func itemDoesExistsInList(item: Item, list: Lists) -> Item?{
+        let realm = try! Realm()
+        let lists = realm.objects(Lists.self).filter("name = %@", list.name)
+        if lists.count == 0{
+            //ak zoznam neexistuje
+            return nil
+        }else{
+            let items = lists[0].items.filter("name = %@", item.name)
+            //let items = realm.objects(Item.self).filter("name = %@", item.name)
+            if items.count > 0{
+                //ak existuje uz prvok v zozname
+                return items[0]
+            }
+            //ak prvok neexistuje v zozname
+            return nil
+        }
+    }
+    
+    //pridanie prvku do existujuceho zoznamu
+    func appendItem(item: Item, forList list: Lists) {
+        let realm = try! Realm()
+        
+        try! realm.write{
+            //do pola items pridame prvok
+            list.items.append(item)
+        }
+    }
+    
+    //priadnie zoznamu
+    //ak uz zoznam existuje tak false
+    //vyuzivam predchadzajucu funkciu na overovanie ci zoznam existuje
+    func addList(list: Lists) ->Bool{
+        let realm = try! Realm()
+        if self.listDoesExists(list: list) != nil{
+            return false
+        }else{
+            //ak neexistuje dany zoznam tak pridavame do databazy novy zoznam
+            try! realm.write {
+                realm.add(list)
+            }
+            return true
+        }
+    }
+    
+    func removeItem(item: Item, fromList list: Lists) -> Item?{
+        let realm = try! Realm()
+        
+        var index = 0
+        //overujeme ci dany zoznam vlastne existuje
+        let listToUpdate = self.listDoesExists(list: list)
+        if let itemToRemove = self.itemDoesExistsInList(item: item, list: list){
+            index = listToUpdate!.items.index(of: itemToRemove)!
+            
+            try! realm.write {
+                //vymazanie prvku zo zoznamu
+                listToUpdate!.items.remove(at: index)
+            }
+            
+            return itemToRemove
+        }
+        return nil
+    }
+    
+    func updateItem(oldItem item: Item, toItem newItem: Item){
+        let realm = try! Realm()
+        
+        //let meno = newItem.name
+        //let meno2 = item.name
+        try! realm.write {
+            item.name = newItem.name
+        }
+    }
+    
+    func updateList(oldList list: Lists, toList newList: Lists){
+        let realm = try! Realm()
+        
+        try! realm.write {
+            list.name = newList.name
+        }
+    }
+    
+    //func removeList(list: Lists){
+       // let realm = try! Realm()
+        //dokoncit
+    //}
+    
+    func deleteItem(item: Item) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.delete(item)
+        }
+    }
+    
+    func deleteList(list: Lists){
+        let realm = try! Realm()
+        
+        if list.items.count == 0 {
+            try! realm.write {
+                realm.delete(list)
+            }
+        }else{
+            while list.items.count > 0 {
+                //let deletedItem = removeItem(item: list.items[0], fromList: list)!
+                //deleteItem(item: deletedItem)
+                let del = list.items[0]
+                let meno = del.name
+                deleteItem(item: list.items[0])
+            }
+            try! realm.write {
+                realm.delete(list)
+            }
+        }
+    }
+}

@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/Realm/RealmManager.swift"
+            timestampString = "586514799.375276"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "allLists()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/ListsViewController.swift"
+            timestampString = "586514799.376745"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/Realm/Item.swift"
+            timestampString = "585686334.469807"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "Item"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/Realm/Item.swift"
+            timestampString = "585686334.4698811"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "Item"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dynamically replaceable thunk for Zoznamy.Item.name.getter : Swift.String"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/Realm/Item.swift"
+                  timestampString = "585346969.755746"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "127">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dynamically replaceable thunk for Zoznamy.Item.name.setter : Swift.String"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/Realm/Item.swift"
+                  timestampString = "585346969.757298"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.Item.name.modify : Swift.String"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/Realm/Item.swift"
+                  timestampString = "585346969.763186"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.Item.name.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/Realm/Item.swift"
+                  timestampString = "585346969.765821"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.Item.init() -&gt; Zoznamy.Item"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/Realm/Item.swift"
+                  timestampString = "585346969.76788"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.Item.init(value: Any) -&gt; Zoznamy.Item"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/Realm/Item.swift"
+                  timestampString = "585346969.769962"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.Item.init(realm: __C.RLMRealm, schema: __C.RLMObjectSchema) -&gt; Zoznamy.Item"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/Realm/Item.swift"
+                  timestampString = "585346969.771626"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "49">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.Item.init(value: Any, schema: __C.RLMSchema) -&gt; Zoznamy.Item"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/Realm/Item.swift"
+                  timestampString = "585346969.773231"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "49">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/Realm/Lists.swift"
+            timestampString = "585686334.469945"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "Lists"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.Lists.name.getter : Swift.String"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/Realm/Lists.swift"
+                  timestampString = "585502112.55855"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "127">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.Lists.name.setter : Swift.String"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/Realm/Lists.swift"
+                  timestampString = "585502112.561069"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.Lists.init() -&gt; Zoznamy.Lists"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/Realm/Lists.swift"
+                  timestampString = "585502112.563642"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.Lists.init(value: Any) -&gt; Zoznamy.Lists"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/Realm/Lists.swift"
+                  timestampString = "585502112.566087"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.Lists.init(realm: __C.RLMRealm, schema: __C.RLMObjectSchema) -&gt; Zoznamy.Lists"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/Realm/Lists.swift"
+                  timestampString = "585502112.569797"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "49">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.Lists.init(value: Any, schema: __C.RLMSchema) -&gt; Zoznamy.Lists"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/Realm/Lists.swift"
+                  timestampString = "585502112.572907"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "49">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/Realm/RealmManager.swift"
+            timestampString = "586514799.377019"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "addList(list:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/Realm/RealmManager.swift"
+            timestampString = "586514799.377103"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "allLists()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/Realm/RealmManager.swift"
+            timestampString = "586514799.377198"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "removeItem(item:fromList:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/ItemsOfListViewController.swift"
+            timestampString = "586514799.377272"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "ItemsOfListViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.ItemsOfListViewController.tableView.getter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/ItemsOfListViewController.swift"
+                  timestampString = "585656947.0226769"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.ItemsOfListViewController.tableView.setter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/ItemsOfListViewController.swift"
+                  timestampString = "585656947.032938"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.ItemsOfListViewController.tableView.modify : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/ItemsOfListViewController.swift"
+                  timestampString = "585656947.0361249"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.ItemsOfListViewController.tableView.modify : Swift.Optional&lt;__C.UITableView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/ItemsOfListViewController.swift"
+                  timestampString = "585656947.039819"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.ItemsOfListViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Zoznamy.ItemsOfListViewController"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/ItemsOfListViewController.swift"
+                  timestampString = "585656947.0433379"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "219">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Zoznamy.ItemsOfListViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Zoznamy.ItemsOfListViewController&gt;"
+                  moduleName = "Zoznamy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martinkostelej/Documents/Zoznamy%20ios/Zoznamy/Zoznamy/ItemsOfListViewController.swift"
+                  timestampString = "585656947.045031"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "139">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/ItemsOfListViewController.swift"
+            timestampString = "586514799.377336"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/ItemsOfListViewController.swift"
+            timestampString = "586514799.377387"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/Realm/RealmManager.swift"
+            timestampString = "586514799.377424"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "getList(name:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/Realm/RealmManager.swift"
+            timestampString = "586514799.377484"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "allLists()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/ListsViewController.swift"
+            timestampString = "586514799.377542"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/Realm/RealmManager.swift"
+            timestampString = "586514799.377594"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "updateItem(oldItem:toItem:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/Realm/RealmManager.swift"
+            timestampString = "586514799.377643"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "appendItem(item:forList:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/ItemsOfListViewController.swift"
+            timestampString = "586514799.377699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "saveNewItem(segue:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/ItemsOfListViewController.swift"
+            timestampString = "586514799.377751"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "saveNewItem(segue:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/ListsViewController.swift"
+            timestampString = "586514799.377804"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "saveNewList(segue:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/Realm/RealmManager.swift"
+            timestampString = "586514799.377884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "itemDoesExistsInList(item:list:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/Realm/RealmManager.swift"
+            timestampString = "586514799.3779351"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "deleteList(list:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
