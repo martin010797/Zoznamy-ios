@@ -30,7 +30,16 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate {
         }
         self.changeItem()
         //nastavovanie farby pozadia
-        self.view.backgroundColor = .black
+        if UserDefaults.standard.object(forKey: "darkMode") != nil{
+            if UserDefaults.standard.bool(forKey: "darkMode") {
+                self.view.backgroundColor = .black
+            }else{
+                self.view.backgroundColor = .white
+            }
+            
+        }else{
+            self.view.backgroundColor = .black
+        }
     }
     
     

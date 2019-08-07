@@ -21,38 +21,108 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //vola sa ked sa appka nastartuje
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        if UserDefaults.standard.object(forKey: "darkMode") != nil{
+            if UserDefaults.standard.bool(forKey: "darkMode") == false{
+                //nastavenie farby status barstyle pismen(cas, bateria...)
+                application.statusBarStyle = .default
+                //UIViewController preferredStatusBarStyle
+                
+                //nastavovanie navigacneho baru
+                UINavigationBar.appearance().barTintColor = UIColor(red: 62.0/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+                //nadpisy na navigacnych baroch
+                UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)]
+                //navratova sipka
+                UINavigationBar.appearance().tintColor = .black
+                //tlacidla na navigacnom bare
+                UIBarButtonItem.appearance().tintColor = .black
+                
+                //spodny bar pre vyberanie obrazoviek
+                UITabBar.appearance().barTintColor = UIColor(red: 63.0/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+                //aktivny prvok
+                UITabBar.appearance().tintColor = .white
+                //UITabBar.appearance().backgroundColor = .black
+                
+                //pozadie text fieldu pri pridavani alebo upravovani zoznamov a prvkov
+                UITextField.appearance().backgroundColor = UIColor(red: 190.0/255.0, green: 190.0/255.0, blue: 190.0/255.0, alpha: 1.0)
+                //farba textu v text fielde
+                UITextField.appearance().textColor = .black
+                
+                //tabulky
+                UITableView.appearance().backgroundColor = .white
+                //medzery medzi cells v tabulke
+                UITableView.appearance().separatorColor = .white
+                UITableViewCell.appearance().backgroundColor = .white
+                
+                //popisky
+                UILabel.appearance().textColor = .black
+            }else{
+                //nastavenie farby status barstyle pismen(cas, bateria...)
+                application.statusBarStyle = .lightContent
+                //UIViewController preferredStatusBarStyle
+                
+                //nastavovanie navigacneho baru
+                UINavigationBar.appearance().barTintColor = UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
+                //nadpisy na navigacnych baroch
+                UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)]
+                //navratova sipka
+                UINavigationBar.appearance().tintColor = .white
+                //tlacidla na navigacnom bare
+                UIBarButtonItem.appearance().tintColor = .white
+                
+                //spodny bar pre vyberanie obrazoviek
+                UITabBar.appearance().barTintColor = UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
+                //aktivny prvok
+                UITabBar.appearance().tintColor = .white
+                
+                //pozadie text fieldu pri pridavani alebo upravovani zoznamov a prvkov
+                UITextField.appearance().backgroundColor = UIColor(red: 90.0/255.0, green: 90.0/255.0, blue: 90.0/255.0, alpha: 1.0)
+                //farba textu v text fielde
+                UITextField.appearance().textColor = .white
+                
+                //tabulky
+                UITableView.appearance().backgroundColor = .black
+                //medzery medzi cells v tabulke
+                UITableView.appearance().separatorColor = .black
+                UITableViewCell.appearance().backgroundColor = .black
+                
+                //popisky
+                UILabel.appearance().textColor = .white
+            }
+        }else{
+            //nastavenie farby status barstyle pismen(cas, bateria...)
+            application.statusBarStyle = .lightContent
+            //UIViewController preferredStatusBarStyle
+            
+            //nastavovanie navigacneho baru
+            UINavigationBar.appearance().barTintColor = UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
+            //nadpisy na navigacnych baroch
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)]
+            //navratova sipka
+            UINavigationBar.appearance().tintColor = .white
+            //tlacidla na navigacnom bare
+            UIBarButtonItem.appearance().tintColor = .white
+            
+            //spodny bar pre vyberanie obrazoviek
+            UITabBar.appearance().barTintColor = UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
+            //aktivny prvok
+            UITabBar.appearance().tintColor = .white
+            
+            //pozadie text fieldu pri pridavani alebo upravovani zoznamov a prvkov
+            UITextField.appearance().backgroundColor = UIColor(red: 90.0/255.0, green: 90.0/255.0, blue: 90.0/255.0, alpha: 1.0)
+            //farba textu v text fielde
+            UITextField.appearance().textColor = .white
+            
+            //tabulky
+            UITableView.appearance().backgroundColor = .black
+            //medzery medzi cells v tabulke
+            UITableView.appearance().separatorColor = .black
+            UITableViewCell.appearance().backgroundColor = .black
+            
+            //popisky
+            UILabel.appearance().textColor = .white
+        }
         
-        //nastavenie farby status barstyle pismen(cas, bateria...)
-        application.statusBarStyle = .lightContent
-        //UIViewController preferredStatusBarStyle
         
-        //nastavovanie navigacneho baru
-        UINavigationBar.appearance().barTintColor = UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
-        //nadpisy na navigacnych baroch
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)]
-        //navratova sipka
-        UINavigationBar.appearance().tintColor = .white
-        //tlacidla na navigacnom bare
-        UIBarButtonItem.appearance().tintColor = .white
-        
-        //spodny bar pre vyberanie obrazoviek
-        UITabBar.appearance().barTintColor = UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
-        //aktivny prvok
-        UITabBar.appearance().tintColor = .white
-        
-        //pozadie text fieldu pri pridavani alebo upravovani zoznamov a prvkov
-        UITextField.appearance().backgroundColor = UIColor(red: 90.0/255.0, green: 90.0/255.0, blue: 90.0/255.0, alpha: 1.0)
-        //farba textu v text fielde
-        UITextField.appearance().textColor = .white
-
-        //tabulky
-        UITableView.appearance().backgroundColor = .black
-        //medzery medzi cells v tabulke
-        UITableView.appearance().separatorColor = .black
-        UITableViewCell.appearance().backgroundColor = .black
-        
-        //popisky
-        UILabel.appearance().textColor = .white
         
         
         //realm migration

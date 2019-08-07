@@ -264,7 +264,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DRP-KH-ADe">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DRP-KH-ADe">
                                                     <rect key="frame" x="254" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="toggleDarkMode:" destination="8rJ-Kc-sve" eventType="valueChanged" id="fmq-cU-jeV"/>
@@ -280,6 +280,10 @@
                                                 <constraint firstItem="DRP-KH-ADe" firstAttribute="top" secondItem="5L3-yN-gru" secondAttribute="top" constant="6" id="sVW-gQ-6bq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameOfDarkModeLabel" destination="ncb-1p-ynw" id="P8k-Oh-WZD"/>
+                                            <outlet property="switchOnOff" destination="DRP-KH-ADe" id="sxx-iN-UXE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

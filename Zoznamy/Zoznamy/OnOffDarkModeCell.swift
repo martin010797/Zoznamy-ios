@@ -10,4 +10,6 @@ import UIKit
 
 class OnOffDarkModeCell: UITableViewCell {
     
+    @IBOutlet weak var nameOfDarkModeLabel: UILabel!
+    @IBOutlet weak var switchOnOff: UISwitch!
 }

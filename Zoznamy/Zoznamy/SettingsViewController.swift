@@ -22,11 +22,26 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        //toggleDarkMode(self)
+        
+        if UserDefaults.standard.object(forKey: "darkMode") != nil{
+            darkModeOn = UserDefaults.standard.bool(forKey: "darkMode")
+        }
+        
     }
     
-    func getDarkModeStatus() -> Bool{
-        return darkModeOn
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        if UserDefaults.standard.object(forKey: "darkMode") != nil{
+            darkModeOn = UserDefaults.standard.bool(forKey: "darkMode")
+        }
+        
     }
+    
+    //func getDarkModeStatus() -> Bool{
+      //  return darkModeOn
+    //}
 
     //MARK: Table View Data Source
     
@@ -38,7 +53,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         //ak nulty riadok tak zobrazi bunku pre dany identifikator
         if indexPath.row == 0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "onOffDarkModeCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "onOffDarkModeCell", for: indexPath) as! OnOffDarkModeCell
+            if UserDefaults.standard.bool(forKey: "darkMode"){
+                cell.switchOnOff.setOn(true, animated: true)
+            }else{
+                cell.switchOnOff.setOn(false, animated: true)
+            }
             return cell
         }
         
@@ -52,13 +72,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBAction func toggleDarkMode(_ sender: Any) {
         let toggleSwitch = sender as! UISwitch
+        //toggleSwitch.setOn(darkModeOn, animated: true)
+        UserDefaults.standard.set(toggleSwitch.isOn, forKey: "darkMode")
         
-        //ak je vypinac zapnuty
         
         if toggleSwitch.isOn{
             //nastavenie farby status barstyle pismen(cas, bateria...)
             //UIApplication().statusBarStyle = .lightContent
             //UIViewController preferredStatusBarStyle
+            
+            darkModeOn = true
             
             //nastavovanie navigacneho baru
             UINavigationBar.appearance().barTintColor = UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
@@ -89,16 +112,20 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             UILabel.appearance().textColor = .white
             
             
-            /*let cellForDarkModeIndex = NSIndexPath(row: 0, section: 0)
+            let cellForDarkModeIndex = NSIndexPath(row: 0, section: 0)
             self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath)?.backgroundColor = .black
-            self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath)?.textLabel!.textColor = .white
+            //self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath)?.textLabel!.textColor = .white
+            let cell = self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath) as!OnOffDarkModeCell
+            cell.nameOfDarkModeLabel.textColor = .white
             self.tableView.backgroundColor = .black
-            self.tableView.separatorColor = .black*/
+            self.tableView.separatorColor = .black
             
         }else{
             //nastavenie farby status barstyle pismen(cas, bateria...)
             //UIApplication().statusBarStyle = .default
             //UIViewController preferredStatusBarStyle
+            
+            darkModeOn = false
             
             //nastavovanie navigacneho baru
             UINavigationBar.appearance().barTintColor = UIColor(red: 62.0/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
@@ -116,7 +143,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             //UITabBar.appearance().backgroundColor = .black
             
             //pozadie text fieldu pri pridavani alebo upravovani zoznamov a prvkov
-            UITextField.appearance().backgroundColor = UIColor(red: 90.0/255.0, green: 90.0/255.0, blue: 90.0/255.0, alpha: 1.0)
+            UITextField.appearance().backgroundColor = UIColor(red: 190.0/255.0, green: 190.0/255.0, blue: 190.0/255.0, alpha: 1.0)
             //farba textu v text fielde
             UITextField.appearance().textColor = .black
             
@@ -129,11 +156,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             //popisky
             UILabel.appearance().textColor = .black
             
-            /*let cellForDarkModeIndex = NSIndexPath(row: 0, section: 0)
+            let cellForDarkModeIndex = NSIndexPath(row: 0, section: 0)
             self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath)?.backgroundColor = .white
-            self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath)?.textLabel!.textColor = .black
+            //self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath)?.textLabel!.textColor = .black
+            let cell = self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath) as!OnOffDarkModeCell
+            cell.nameOfDarkModeLabel.textColor = .black
             self.tableView.backgroundColor = .white
-            self.tableView.separatorColor = .white*/
+            self.tableView.separatorColor = .white
         }
     }
 }
