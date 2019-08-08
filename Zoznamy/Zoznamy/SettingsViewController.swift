@@ -54,10 +54,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         //ak nulty riadok tak zobrazi bunku pre dany identifikator
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "onOffDarkModeCell", for: indexPath) as! OnOffDarkModeCell
+            if UserDefaults.standard.object(forKey: "darkMode") == nil{
+                cell.switchOnOff.setOn(true, animated: false)
+            }
             if UserDefaults.standard.bool(forKey: "darkMode"){
-                cell.switchOnOff.setOn(true, animated: true)
+                cell.switchOnOff.setOn(true, animated: false)
             }else{
-                cell.switchOnOff.setOn(false, animated: true)
+                cell.switchOnOff.setOn(false, animated: false)
             }
             return cell
         }
@@ -111,6 +114,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             //popisky
             UILabel.appearance().textColor = .white
             
+            //farba tabbaru
+            self.tabBarController?.tabBar.barTintColor = UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
+            //farba navigacneho baru
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
+            //farba textu na nav bare
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)]
             
             let cellForDarkModeIndex = NSIndexPath(row: 0, section: 0)
             self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath)?.backgroundColor = .black
@@ -129,6 +138,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
             //nastavovanie navigacneho baru
             UINavigationBar.appearance().barTintColor = UIColor(red: 62.0/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+            
             //nadpisy na navigacnych baroch
             UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)]
             //navratova sipka
@@ -155,6 +165,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
             //popisky
             UILabel.appearance().textColor = .black
+            
+            //farba tabbaru
+            self.tabBarController?.tabBar.barTintColor = UIColor(red: 63.0/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+            //farba navigacneho baru
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 62.0/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+            //farba textu na nav bare
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)]
             
             let cellForDarkModeIndex = NSIndexPath(row: 0, section: 0)
             self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath)?.backgroundColor = .white
