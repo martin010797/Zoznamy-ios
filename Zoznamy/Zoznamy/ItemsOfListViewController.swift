@@ -12,6 +12,7 @@ import RealmSwift
 class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var randomButton: UIButton!
     
     //premenna na uchovavanie prvkov ktore zobrazujeme v tabulke
     var items: Results<Item>?
@@ -29,13 +30,43 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.estimatedRowHeight = 45
         tableView.rowHeight = UITableView.automaticDimension
         
-        //hadam v poriadku
         listOfItems = realmManager.getList(name: listText)
         items = realmManager.allItemsOfList(list: listOfItems!)
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if UserDefaults.standard.object(forKey: "darkMode") != nil{
+            if UserDefaults.standard.bool(forKey: "darkMode") {
+                randomButton.tintColor = .white
+                randomButton.backgroundColor = .black
+                self.view.backgroundColor = .black
+            }else{
+                randomButton.tintColor = .black
+                randomButton.backgroundColor = .white
+                self.view.backgroundColor = .white
+            }
+            
+        }else{
+            randomButton.tintColor = .white
+            randomButton.backgroundColor = .black
+            self.view.backgroundColor = .black
+        }
     }
     
     @IBAction func editItem(_ sender: Any) {
         performSegue(withIdentifier: "editListSegue", sender: self)
+    }
+    
+    @IBAction func randomItemOfList(_ sender: Any) {
+        //let randomNumber: Int = 2
+        if (items?.count)! > 0{
+            let randomNumber = Int.random(in: 0..<(items?.count)!)
+            let randomCellIndex = IndexPath(row: randomNumber, section: 0)
+            let cell = tableView.cellForRow(at: randomCellIndex) as! ItemCell
+            performSegue(withIdentifier: "showItem", sender: cell)
+        }
     }
     
     //MARK: Table View Data Source

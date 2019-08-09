@@ -55,6 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 //popisky
                 UILabel.appearance().textColor = .black
+                
+                //tlačidlá
+                //UIButton.appearance().backgroundColor = .white
             }else{
                 //nastavenie farby status barstyle pismen(cas, bateria...)
                 application.statusBarStyle = .lightContent
@@ -87,6 +90,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 //popisky
                 UILabel.appearance().textColor = .white
+                
+                //tlačidlá
+                //UIButton.appearance().backgroundColor = .black
             }
         }else{
             //nastavenie farby status barstyle pismen(cas, bateria...)

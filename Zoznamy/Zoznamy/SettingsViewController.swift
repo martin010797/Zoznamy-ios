@@ -55,13 +55,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         //ak nulty riadok tak zobrazi bunku pre dany identifikator
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "onOffDarkModeCell", for: indexPath) as! OnOffDarkModeCell
-            if UserDefaults.standard.object(forKey: "darkMode") == nil{
-                cell.switchOnOff.setOn(true, animated: false)
-            }
+            
             if UserDefaults.standard.bool(forKey: "darkMode"){
                 cell.switchOnOff.setOn(true, animated: false)
             }else{
                 cell.switchOnOff.setOn(false, animated: false)
+            }
+            if UserDefaults.standard.object(forKey: "darkMode") == nil{
+                cell.switchOnOff.setOn(true, animated: false)
             }
             return cell
         }
