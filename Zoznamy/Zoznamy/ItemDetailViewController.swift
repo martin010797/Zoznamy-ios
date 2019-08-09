@@ -29,6 +29,20 @@ class ItemDetailViewController:  UIViewController{
             self.view.backgroundColor = .black
         }
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        //nastavovanie farby pozadia
+        if UserDefaults.standard.object(forKey: "darkMode") != nil{
+            if UserDefaults.standard.bool(forKey: "darkMode") {
+                self.view.backgroundColor = .black
+            }else{
+                self.view.backgroundColor = .white
+            }
+            
+        }else{
+            self.view.backgroundColor = .black
+        }
+    }
     @IBAction func editItem(_ sender: Any) {
         performSegue(withIdentifier: "editItemSegue", sender: self)
     }

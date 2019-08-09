@@ -12,6 +12,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     
+    
     let onOffCellIdentifier = "onOffDarkModeCell"
     
     var darkModeOn = false
@@ -80,12 +81,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         if toggleSwitch.isOn{
-            //nastavenie farby status barstyle pismen(cas, bateria...)
-            //UIApplication().statusBarStyle = .lightContent
-            //UIViewController preferredStatusBarStyle
-            
             darkModeOn = true
-            
+            UIApplication.shared.statusBarStyle = .lightContent
             //nastavovanie navigacneho baru
             UINavigationBar.appearance().barTintColor = UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
             //nadpisy na navigacnych baroch
@@ -120,22 +117,15 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             self.navigationController?.navigationBar.barTintColor = UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
             //farba textu na nav bare
             self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)]
-            
             let cellForDarkModeIndex = NSIndexPath(row: 0, section: 0)
             self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath)?.backgroundColor = .black
-            //self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath)?.textLabel!.textColor = .white
             let cell = self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath) as!OnOffDarkModeCell
             cell.nameOfDarkModeLabel.textColor = .white
             self.tableView.backgroundColor = .black
             self.tableView.separatorColor = .black
-            
         }else{
-            //nastavenie farby status barstyle pismen(cas, bateria...)
-            //UIApplication().statusBarStyle = .default
-            //UIViewController preferredStatusBarStyle
-            
             darkModeOn = false
-            
+            UIApplication.shared.statusBarStyle = .default
             //nastavovanie navigacneho baru
             UINavigationBar.appearance().barTintColor = UIColor(red: 62.0/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
             
@@ -175,7 +165,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
             let cellForDarkModeIndex = NSIndexPath(row: 0, section: 0)
             self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath)?.backgroundColor = .white
-            //self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath)?.textLabel!.textColor = .black
             let cell = self.tableView.cellForRow(at: cellForDarkModeIndex as IndexPath) as!OnOffDarkModeCell
             cell.nameOfDarkModeLabel.textColor = .black
             self.tableView.backgroundColor = .white
