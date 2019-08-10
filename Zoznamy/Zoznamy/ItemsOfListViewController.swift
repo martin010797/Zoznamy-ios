@@ -14,6 +14,9 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var randomButton: UIButton!
     
+    //premenna pre index kvoli zobrazovaniu nahodneho prvku
+    var randomItemNumberVar: Int = 0
+    
     //premenna na uchovavanie prvkov ktore zobrazujeme v tabulke
     var items: Results<Item>?
     let realmManager = RealmManager()
@@ -60,12 +63,22 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func randomItemOfList(_ sender: Any) {
-        //let randomNumber: Int = 2
+        
         if (items?.count)! > 0{
+            /*
+             if Maťko.loves.Lucka == true
+             do (boztek.na.licko)
+             */
             let randomNumber = Int.random(in: 0..<(items?.count)!)
+            //let randomNumber = 0
+            randomItemNumberVar = randomNumber
             let randomCellIndex = IndexPath(row: randomNumber, section: 0)
-            let cell = tableView.cellForRow(at: randomCellIndex) as! ItemCell
-            performSegue(withIdentifier: "showItem", sender: cell)
+            //let randomCellIndex = NSIndexPath(row: randomNumber, section: 0)
+            
+            //let cell = tableView.cellForRow(at: randomCellIndex) as! ItemCell
+            
+            //performSegue(withIdentifier: "showItem", sender: cell)
+            performSegue(withIdentifier: "showItem", sender: items![0] as Item)
         }
     }
     
@@ -124,7 +137,15 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
                 let detailViewController = segue.destination as! ItemDetailViewController
                 let item = items![indexPath!.row]
                 detailViewController.itemText = item.name
+                
+                
             }
+        }
+        //vyuziva sa pokial vyberame nahodny prvok
+        if sender is Item{
+            let detailViewController = segue.destination as! ItemDetailViewController
+            let item = items![randomItemNumberVar]
+            detailViewController.itemText = item.name
         }
         
     }
