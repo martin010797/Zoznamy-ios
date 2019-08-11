@@ -44,17 +44,43 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
             if UserDefaults.standard.bool(forKey: "darkMode") {
                 randomButton.tintColor = .white
                 randomButton.backgroundColor = .black
+                randomButton.setTitle("", for: .normal)
+                //randomButton.imageView?.tintColor = .white
+                
+                let origImage = UIImage(named: "random")
+                let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
+                randomButton.setImage(tintedImage, for: .normal)
+                randomButton.tintColor = .white
+                
                 self.view.backgroundColor = .black
             }else{
                 randomButton.tintColor = .black
                 randomButton.backgroundColor = .white
+                //randomButton.imageView?.tintColor = .black
                 self.view.backgroundColor = .white
+                
+                randomButton.setTitle("", for: .normal)
+                //randomButton.imageView?.tintColor = .white
+                
+                let origImage = UIImage(named: "random")
+                let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
+                randomButton.setImage(tintedImage, for: .normal)
+                randomButton.tintColor = .black
+                //randomButton.tintColor = UIColor(red: 62.0/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
             }
             
         }else{
             randomButton.tintColor = .white
             randomButton.backgroundColor = .black
             self.view.backgroundColor = .black
+            
+            randomButton.setTitle("", for: .normal)
+            //randomButton.imageView?.tintColor = .white
+            
+            let origImage = UIImage(named: "random")
+            let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
+            randomButton.setImage(tintedImage, for: .normal)
+            randomButton.tintColor = .white
         }
     }
     
@@ -70,14 +96,7 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
              do (boztek.na.licko)
              */
             let randomNumber = Int.random(in: 0..<(items?.count)!)
-            //let randomNumber = 0
             randomItemNumberVar = randomNumber
-            let randomCellIndex = IndexPath(row: randomNumber, section: 0)
-            //let randomCellIndex = NSIndexPath(row: randomNumber, section: 0)
-            
-            //let cell = tableView.cellForRow(at: randomCellIndex) as! ItemCell
-            
-            //performSegue(withIdentifier: "showItem", sender: cell)
             performSegue(withIdentifier: "showItem", sender: items![0] as Item)
         }
     }
@@ -141,7 +160,7 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
                 
             }
         }
-        //vyuziva sa pokial vyberame nahodny prvok
+        //vyuziva sa na posielanie dat pokial vyberame nahodny prvok
         if sender is Item{
             let detailViewController = segue.destination as! ItemDetailViewController
             let item = items![randomItemNumberVar]
