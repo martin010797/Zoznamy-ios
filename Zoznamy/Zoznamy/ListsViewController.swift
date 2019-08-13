@@ -9,18 +9,20 @@
 import UIKit
 import RealmSwift
 
-class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate {
     
     //premenna na uchovavanie zoznamov ktore zobrazujeme v tabulke
     var lists: Results<Lists>?
     let realmManager = RealmManager()
+    var filteredLists: Results<Lists>?
     
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -30,40 +32,80 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //nacitanie dat do lists
         lists = realmManager.allLists()
+        
+        setUpSearchBar()
+        //filtered lists pouzivam na zobrazovanie do table view aj kvoli filtrovaniu cez vyhladavanie
+        filteredLists = lists
     }
     
-/*override var preferredStatusBarStyle: UIStatusBarStyle {
- return .lightContent
- }
- 
- override func viewDidAppear(_ animated: Bool) {
- navigationController?.navigationBar.barStyle = .black
- }*/
+    override func viewWillAppear(_ animated: Bool) {
+        if UserDefaults.standard.object(forKey: "darkMode") != nil{
+            if UserDefaults.standard.bool(forKey: "darkMode") {
+                searchBar.backgroundColor = .gray
+                searchBar.barTintColor = .black
+            }else{
+                
+                searchBar.backgroundColor = .gray
+                //searchBar.barTintColor = UIColor(red: 62.0/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+                searchBar.barTintColor = .white
+            }
+        }else{
+            searchBar.backgroundColor = .gray
+            searchBar.barTintColor = .black
+        }
+    }
+    // MARK: Search Bar Delegate
+    private func setUpSearchBar(){
+        searchBar.delegate = self
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            filteredLists = lists
+            tableView.reloadData()
+            return
+        }
+        //[c] sa dava aby aj z databazy boli udaje lowercased
+        filteredLists = lists?.filter("name contains[c] %@", searchBar.text?.lowercased())
+        tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchBar.endEditing(true)
+    }
     
     //MARK: Table View Data Source
     
     //kolko riadkov bude v tabulke resp. v sekcii tabulky
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //vracia pre pocet zoznamov
-        return (lists?.count)!
+        //return (lists?.count)!
+        return (filteredLists?.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListCell
-        let list = lists![indexPath.row]
+        //let list = lists![indexPath.row]
+        let list = filteredLists![indexPath.row]
         cell.listLabel.text = list.name
         //ked by som chcel pristupit k prvku zo zoznamu tak
         //list.items[0].name
-        //tieto dve mozno ani nie je treba
-        //cell.setNeedsUpdateConstraints()
-        //cell.updateConstraintsIfNeeded()
         return cell
     }
     
     //mazanie prvku
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            let list = lists![indexPath.row]
+            //let list = lists![indexPath.row]
+            let list = filteredLists![indexPath.row]
             realmManager.deleteList(list: list)
             lists = realmManager.allLists()
             
@@ -83,6 +125,7 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.cellForRow(at: indexPath) as! ListCell
         performSegue(withIdentifier: "showListItems", sender: cell)
         tableView.deselectRow(at: indexPath, animated: true)
+        searchBar.endEditing(true)
     }
     
     //MARK: Segues
@@ -94,7 +137,8 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             if segue.identifier == "showListItems" {
                 let listViewController = segue.destination as! ItemsOfListViewController
-                let list = lists![indexPath!.row]
+                //let list = lists![indexPath!.row]
+                let list = filteredLists![indexPath!.row]
                 listViewController.listText = list.name
             }
         }

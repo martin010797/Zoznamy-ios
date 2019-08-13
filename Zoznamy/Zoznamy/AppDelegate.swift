@@ -13,10 +13,6 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    //toto som ja pridaval
-    //public var darkMode: Bool?
-
 
     //vola sa ked sa appka nastartuje
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -62,7 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 //nastavenie farby status barstyle pismen(cas, bateria...)
                 application.statusBarStyle = .lightContent
                 //UIViewController preferredStatusBarStyle
-                
+
+                //UISearchBar.appearance().tintColor = .black
                 //nastavovanie navigacneho baru
                 UINavigationBar.appearance().barTintColor = UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
                 //nadpisy na navigacnych baroch
