@@ -9,10 +9,11 @@
 import UIKit
 import RealmSwift
 
-class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var randomButton: UIButton!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     //premenna pre index kvoli zobrazovaniu nahodneho prvku
     var randomItemNumberVar: Int = 0
@@ -20,6 +21,7 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     //premenna na uchovavanie prvkov ktore zobrazujeme v tabulke
     var items: Results<Item>?
     let realmManager = RealmManager()
+    var filteredItems: Results<Item>?
     
     var listOfItems: Lists?
     var listText = ""
@@ -36,61 +38,123 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
         listOfItems = realmManager.getList(name: listText)
         items = realmManager.allItemsOfList(list: listOfItems!)
         
+        setUpSearchBar()
+        filteredItems = items
         
+        sortItems()
+        searchBar.placeholder = "Search Item by Name"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if UserDefaults.standard.object(forKey: "darkMode") != nil{
             if UserDefaults.standard.bool(forKey: "darkMode") {
+                //farba random buttonu
                 randomButton.tintColor = .white
                 randomButton.backgroundColor = .black
                 randomButton.setTitle("", for: .normal)
-                //randomButton.imageView?.tintColor = .white
-                
                 let origImage = UIImage(named: "random")
                 let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
                 randomButton.setImage(tintedImage, for: .normal)
                 randomButton.tintColor = .white
+                //farba search baru
+                searchBar.backgroundColor = .gray
+                searchBar.barTintColor = .black
+                searchBar.tintColor = .white
                 
                 self.view.backgroundColor = .black
             }else{
+                //random button
                 randomButton.tintColor = .black
                 randomButton.backgroundColor = .white
-                //randomButton.imageView?.tintColor = .black
-                self.view.backgroundColor = .white
-                
                 randomButton.setTitle("", for: .normal)
-                //randomButton.imageView?.tintColor = .white
-                
                 let origImage = UIImage(named: "random")
                 let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
                 randomButton.setImage(tintedImage, for: .normal)
                 randomButton.tintColor = .black
-                //randomButton.tintColor = UIColor(red: 62.0/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+                
+                //farba search baru
+                searchBar.backgroundColor = .gray
+                searchBar.barTintColor = .white
+                searchBar.tintColor = UIColor(red: 62.0/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+                
+                self.view.backgroundColor = .white
             }
             
         }else{
             randomButton.tintColor = .white
             randomButton.backgroundColor = .black
-            self.view.backgroundColor = .black
-            
             randomButton.setTitle("", for: .normal)
-            //randomButton.imageView?.tintColor = .white
-            
             let origImage = UIImage(named: "random")
             let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
             randomButton.setImage(tintedImage, for: .normal)
             randomButton.tintColor = .white
+            
+            //farba search baru
+            searchBar.backgroundColor = .gray
+            searchBar.barTintColor = .black
+            searchBar.tintColor = .white
+            
+            self.view.backgroundColor = .black
         }
+    }
+    
+    func sortItems(){
+        switch searchBar.selectedScopeButtonIndex {
+        case 0:
+            filteredItems = filteredItems?.sorted(byKeyPath: "name", ascending: true)
+        case 1:
+            filteredItems = filteredItems?.sorted(byKeyPath: "date", ascending: false)
+        default:
+            break
+        }
+        tableView.reloadData()
     }
     
     @IBAction func editItem(_ sender: Any) {
         performSegue(withIdentifier: "editListSegue", sender: self)
     }
     
+    // MARK: Search Bar Delegate
+    private func setUpSearchBar(){
+        searchBar.delegate = self
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            filteredItems = items
+            sortItems()
+            return
+        }
+        //[c] sa dava aby aj z databazy boli udaje lowercased
+        filteredItems = items?.filter("name contains[c] %@", searchBar.text?.lowercased())
+        sortItems()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        switch selectedScope {
+        case 0:
+            filteredItems = filteredItems?.sorted(byKeyPath: "name", ascending: true)
+        case 1:
+            filteredItems = filteredItems?.sorted(byKeyPath: "date", ascending: false)
+        default:
+            break
+        }
+        tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //ked sa stlaci vyhladavanie skrije sa klavesnica
+        searchBar.endEditing(true)
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        //pri zascrollovani sa skryje klavesnica
+        searchBar.endEditing(true)
+    }
+    
     @IBAction func randomItemOfList(_ sender: Any) {
         
-        if (items?.count)! > 0{
+        /*if (items?.count)! > 0{
             /*
              if Maťko.loves.Lucka == true
              do (boztek.na.licko)
@@ -98,6 +162,11 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
             let randomNumber = Int.random(in: 0..<(items?.count)!)
             randomItemNumberVar = randomNumber
             performSegue(withIdentifier: "showItem", sender: items![0] as Item)
+        }*/
+        if (filteredItems?.count)! > 0{
+            let randomNumber = Int.random(in: 0..<(filteredItems?.count)!)
+            randomItemNumberVar = randomNumber
+            performSegue(withIdentifier: "showItem", sender: filteredItems![0] as Item)
         }
     }
     
@@ -105,12 +174,14 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     
     //kolko riadkov bude v tabulke resp. v sekcii tabulky
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (items?.count)!
+        //return (items?.count)!
+        return (filteredItems?.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemCell
-        let item = items![indexPath.row]
+        //let item = items![indexPath.row]
+        let item = filteredItems![indexPath.row]
         cell.itemLabel.text = item.name
         return cell
     }
@@ -118,7 +189,8 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     //mazanie prvku
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            let item = items![indexPath.row]
+            //let item = items![indexPath.row]
+            let item = filteredItems![indexPath.row]
             realmManager.deleteItem(item: item)
             items = realmManager.allItemsOfList(list: listOfItems!)
             
@@ -138,6 +210,7 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.cellForRow(at: indexPath) as! ItemCell
         performSegue(withIdentifier: "showItem", sender: cell)
         tableView.deselectRow(at: indexPath, animated: true)
+        searchBar.endEditing(true)
     }
     //MARK: Segues
     
@@ -154,7 +227,8 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
             
             if segue.identifier == "showItem" {
                 let detailViewController = segue.destination as! ItemDetailViewController
-                let item = items![indexPath!.row]
+                //let item = items![indexPath!.row]
+                let item = filteredItems![indexPath!.row]
                 detailViewController.itemText = item.name
                 
                 
@@ -163,7 +237,8 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
         //vyuziva sa na posielanie dat pokial vyberame nahodny prvok
         if sender is Item{
             let detailViewController = segue.destination as! ItemDetailViewController
-            let item = items![randomItemNumberVar]
+            //let item = items![randomItemNumberVar]
+            let item = filteredItems![randomItemNumberVar]
             detailViewController.itemText = item.name
         }
         

@@ -36,24 +36,44 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         setUpSearchBar()
         //filtered lists pouzivam na zobrazovanie do table view aj kvoli filtrovaniu cez vyhladavanie
         filteredLists = lists
+        sortLists()
+        
+        searchBar.placeholder = "Search List by Name"
+        //navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        //nejaky bug pri nastavovani searchbaru na vrchu obrazovky a pristupovanie k nemu vo viewwillappear
         if UserDefaults.standard.object(forKey: "darkMode") != nil{
             if UserDefaults.standard.bool(forKey: "darkMode") {
                 searchBar.backgroundColor = .gray
                 searchBar.barTintColor = .black
+                searchBar.tintColor = .white
             }else{
-                
                 searchBar.backgroundColor = .gray
-                //searchBar.barTintColor = UIColor(red: 62.0/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
                 searchBar.barTintColor = .white
+                searchBar.tintColor = UIColor(red: 62.0/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
             }
         }else{
             searchBar.backgroundColor = .gray
             searchBar.barTintColor = .black
+            searchBar.tintColor = .white
         }
     }
+    
+    private func sortLists(){
+        switch searchBar.selectedScopeButtonIndex {
+        case 0:
+            filteredLists = filteredLists?.sorted(byKeyPath: "name", ascending: true)
+        case 1:
+            filteredLists = filteredLists?.sorted(byKeyPath: "date", ascending: false)
+        default:
+            break
+        }
+        tableView.reloadData()
+    }
+    
     // MARK: Search Bar Delegate
     private func setUpSearchBar(){
         searchBar.delegate = self
@@ -62,16 +82,24 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
             filteredLists = lists
-            tableView.reloadData()
+            sortLists()
             return
         }
         //[c] sa dava aby aj z databazy boli udaje lowercased
         filteredLists = lists?.filter("name contains[c] %@", searchBar.text?.lowercased())
-        tableView.reloadData()
+        sortLists()
     }
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        
+        switch selectedScope {
+        case 0:
+            filteredLists = filteredLists?.sorted(byKeyPath: "name", ascending: true)
+        case 1:
+            filteredLists = filteredLists?.sorted(byKeyPath: "date", ascending: false)
+        default:
+            break
+        }
+        tableView.reloadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -96,8 +124,6 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //let list = lists![indexPath.row]
         let list = filteredLists![indexPath.row]
         cell.listLabel.text = list.name
-        //ked by som chcel pristupit k prvku zo zoznamu tak
-        //list.items[0].name
         return cell
     }
     
