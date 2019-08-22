@@ -46,6 +46,7 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
         if UserDefaults.standard.object(forKey: "darkMode") != nil{
             if UserDefaults.standard.bool(forKey: "darkMode") {
                 //farba random buttonu
@@ -182,7 +183,25 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemCell
         //let item = items![indexPath.row]
         let item = filteredItems![indexPath.row]
-        cell.itemLabel.text = item.name
+        //cell.itemLabel.text = item.name
+        cell.itemTitle.text = item.name
+        //cell.itemImage.image = UIImage(named: "noImage")
+        
+        if UserDefaults.standard.object(forKey: "darkMode") != nil{
+            if UserDefaults.standard.bool(forKey: "darkMode") {
+                cell.itemImage.image = UIImage(named: "noImageDark")
+            }else{
+                cell.itemImage.image = UIImage(named: "noImageLight")
+            }
+        }else{
+            cell.itemImage.image = UIImage(named: "noImageDark")
+        }
+        /*
+        cell.itemImage.layer.borderWidth = 1
+        cell.itemImage.layer.masksToBounds = false
+        cell.itemImage.layer.borderColor = UIColor.black.cgColor
+        cell.itemImage.layer.cornerRadius = cell.itemImage.frame.height/2
+        cell.itemImage.clipsToBounds = true*/
         return cell
     }
     
