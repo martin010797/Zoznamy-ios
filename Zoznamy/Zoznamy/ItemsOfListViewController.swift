@@ -154,16 +154,10 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func randomItemOfList(_ sender: Any) {
-        
-        /*if (items?.count)! > 0{
             /*
              if Maťko.loves.Lucka == true
              do (boztek.na.licko)
              */
-            let randomNumber = Int.random(in: 0..<(items?.count)!)
-            randomItemNumberVar = randomNumber
-            performSegue(withIdentifier: "showItem", sender: items![0] as Item)
-        }*/
         if (filteredItems?.count)! > 0{
             let randomNumber = Int.random(in: 0..<(filteredItems?.count)!)
             randomItemNumberVar = randomNumber

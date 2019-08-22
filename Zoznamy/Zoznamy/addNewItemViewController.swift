@@ -7,14 +7,19 @@
 //
 
 import UIKit
+//import IQKeyboardManager
 
-class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate{
     
     var editItem = false
     var itemText = ""
     
     @IBOutlet weak var itemTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var viewFromScrollView: UIView!
+    @IBOutlet weak var descriptionForItem: UITextView!
+    
+    
     
     //var list = Lists()
     var item = Item()
@@ -22,7 +27,12 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //kvoli skryvaniu klavesnice pri dotyku mimo textview
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addNewItemViewController.keyboardDismiss))
+        viewFromScrollView.addGestureRecognizer(tap)
+        
         itemTextField.delegate = self
+        descriptionForItem.delegate = self
         
         if editItem == true{
             itemTextField.text = itemText
@@ -30,19 +40,28 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
             item.name = itemText
         }
         self.changeItem()
+        descriptionForItem.backgroundColor = UIColor(red: 190.0/255.0, green: 190.0/255.0, blue: 190.0/255.0, alpha: 1.0)
         //nastavovanie farby pozadia
         if UserDefaults.standard.object(forKey: "darkMode") != nil{
             if UserDefaults.standard.bool(forKey: "darkMode") {
                 imageView.image = UIImage(named: "noImageDark")
                 self.view.backgroundColor = .black
+                viewFromScrollView.backgroundColor = .black
+                descriptionForItem.textColor = .white
+                //descriptionForItem.backgroundColor = .gray
             }else{
                 self.view.backgroundColor = .white
                 imageView.image = UIImage(named: "noImageLight")
+                viewFromScrollView.backgroundColor = .white
+                //descriptionForItem.backgroundColor = .gray
             }
             
         }else{
             imageView.image = UIImage(named: "noImageDark")
             self.view.backgroundColor = .black
+            viewFromScrollView.backgroundColor = .black
+            descriptionForItem.textColor = .white
+            //descriptionForItem.backgroundColor = .gray
         }
     }
     
@@ -90,6 +109,12 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
         textField.resignFirstResponder()
         return false
     }
+
+    //schovavanie klavesnice pri tuknuti mimo
+    @objc func keyboardDismiss(){
+        viewFromScrollView.endEditing(true)
+    }
+
     
     func changeItem(){
         if editItem {
