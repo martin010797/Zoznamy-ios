@@ -13,6 +13,7 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     var editItem = false
     var itemText = ""
+    var itemDescription = ""
     
     @IBOutlet weak var itemTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
@@ -33,8 +34,12 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
         
         if editItem == true{
             itemTextField.text = itemText
+            descriptionForItem.text = itemDescription
             
             item.name = itemText
+            item.text = itemDescription
+        }else{
+            descriptionForItem.text = "No description"
         }
         self.changeItem()
         descriptionForItem.backgroundColor = UIColor(red: 190.0/255.0, green: 190.0/255.0, blue: 190.0/255.0, alpha: 1.0)

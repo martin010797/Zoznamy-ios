@@ -191,6 +191,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="itemImage" destination="Nh2-wX-hao" id="Zxu-xA-0zE"/>
+                                            <outlet property="itemSubtitle" destination="Zkk-NH-0av" id="fUH-Kz-JFh"/>
                                             <outlet property="itemTitle" destination="hoB-5X-mem" id="hxM-9W-j76"/>
                                         </connections>
                                     </tableViewCell>

@@ -16,10 +16,12 @@ class ItemDetailViewController:  UIViewController{
     @IBOutlet weak var textViewDescription: UITextView!
     
     var itemText = ""
+    var itemDescription = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         itemLabel.text = itemText
+        textViewDescription.text = itemDescription
         
         textViewDescription.isEditable = false
         
@@ -85,6 +87,7 @@ class ItemDetailViewController:  UIViewController{
             let editItemViewController = navViewController.viewControllers[0] as! addNewItemViewController
             
             editItemViewController.itemText = itemText
+            editItemViewController.itemDescription = itemDescription
             editItemViewController.editItem = true
         }
     }

@@ -60,6 +60,8 @@ class RealmManager {
             return nil
         }else{
             let items = lists[0].items.filter("name = %@", item.name)
+            //items = lists[0].items.filter("text = %@", item.text)
+            //items = items.filter("text = %@", item.text)
             //let items = realm.objects(Item.self).filter("name = %@", item.name)
             if items.count > 0{
                 //ak existuje uz prvok v zozname
@@ -68,7 +70,31 @@ class RealmManager {
             //ak prvok neexistuje v zozname
             return nil
         }
+        
     }
+    //overuje ci existuje prvok v zozname pokial sa nemenilo meno v editovani
+    func itemDoesExistsInListSameName(item: Item, list: Lists) -> Item?{
+        let realm = try! Realm()
+        let lists = realm.objects(Lists.self).filter("name = %@", list.name)
+        if lists.count == 0{
+            //ak zoznam neexistuje
+            return nil
+        }else{
+            var items = lists[0].items.filter("name = %@", item.name)
+            //items = lists[0].items.filter("text = %@", item.text)
+            items = items.filter("text = %@", item.text)
+            //let items = realm.objects(Item.self).filter("name = %@", item.name)
+            if items.count > 0{
+                //ak existuje uz prvok v zozname
+                return items[0]
+            }
+            //ak prvok neexistuje v zozname
+            return nil
+        }
+        
+    }
+    
+    
     
     //pridanie prvku do existujuceho zoznamu
     func appendItem(item: Item, forList list: Lists) {
@@ -122,6 +148,7 @@ class RealmManager {
         //let meno2 = item.name
         try! realm.write {
             item.name = newItem.name
+            item.text = newItem.text
         }
     }
     

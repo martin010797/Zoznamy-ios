@@ -179,7 +179,12 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
         let item = filteredItems![indexPath.row]
         //cell.itemLabel.text = item.name
         cell.itemTitle.text = item.name
-        //cell.itemImage.image = UIImage(named: "noImage")
+        
+        if (item.text == "") || (item.text == " "){
+            cell.itemSubtitle.text = "No description"
+        }else{
+            cell.itemSubtitle.text = item.text
+        }
         
         if UserDefaults.standard.object(forKey: "darkMode") != nil{
             if UserDefaults.standard.bool(forKey: "darkMode") {
@@ -244,6 +249,12 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
                 let item = filteredItems![indexPath!.row]
                 detailViewController.itemText = item.name
                 
+                if (item.text == "") || (item.text == " "){
+                    detailViewController.itemDescription = "No description"
+                }else{
+                    detailViewController.itemDescription = item.text
+                }
+                
                 
             }
         }
@@ -253,6 +264,13 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
             //let item = items![randomItemNumberVar]
             let item = filteredItems![randomItemNumberVar]
             detailViewController.itemText = item.name
+            
+            if (item.text == "") || (item.text == " "){
+                detailViewController.itemDescription = "No description"
+            }else{
+                detailViewController.itemDescription = item.text
+            }
+            
         }
         
     }
@@ -274,6 +292,9 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
             let item = Item()
             item.name = addNewItem.itemTextField.text!
             
+            //nove
+            item.text = addNewItem.descriptionForItem.text!
+            
             if addNewItem.editItem{
                 let oldItem = addNewItem.item
                 let itemsFiltered = items!.filter("name = %@", oldItem.name)
@@ -283,12 +304,28 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
                 }else{
                     vysledok = oldItem
                 }
-                if realmManager.itemDoesExistsInList(item: item, list: listOfItems!) == nil{
-                    //zavola funkciu na update zo stareho na novy
-                    realmManager.updateItem(oldItem: vysledok, toItem: item)
+                
+                //rozdelovanie na to ci sa meni meno kvoli tomu aby som nezmenil na prvok ktory uz existuje
+                //a aby som v opacnom pripade mohol editovat prvok
+                //vytvorene dve jemne pozmenene funkcie v realm manageri
+                if oldItem.name == item.name{
+                    if realmManager.itemDoesExistsInListSameName(item: item, list: listOfItems!) == nil{
+                        //zavola funkciu na update zo stareho na novy
+                        realmManager.updateItem(oldItem: vysledok, toItem: item)
+                        
+                    }else{
+                        print("Prvok v zozname uz existuje")
+                    }
                 }else{
-                    print("Prvok v zozname uz existuje")
+                    if realmManager.itemDoesExistsInList(item: item, list: listOfItems!) == nil{
+                        //zavola funkciu na update zo stareho na novy
+                        realmManager.updateItem(oldItem: vysledok, toItem: item)
+                    }else{
+                        print("Prvok v zozname uz existuje")
+                    }
                 }
+                
+                
             }else{
                 if realmManager.itemDoesExistsInList(item: item, list: listOfItems!) == nil{
                     //ak prvok este v zozname neexistuje tak ho prida
