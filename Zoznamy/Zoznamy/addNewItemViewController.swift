@@ -18,9 +18,6 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var viewFromScrollView: UIView!
     @IBOutlet weak var descriptionForItem: UITextView!
-    
-    
-    
     //var list = Lists()
     var item = Item()
     
@@ -91,6 +88,7 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
         self.present(actionSheet, animated: true, completion: nil)
     }
     
+    //vyberanie obrazka
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         

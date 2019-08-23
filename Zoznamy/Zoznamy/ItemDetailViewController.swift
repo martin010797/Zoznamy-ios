@@ -11,22 +11,40 @@ import UIKit
 class ItemDetailViewController:  UIViewController{
     
     @IBOutlet weak var itemLabel: UILabel!
+    @IBOutlet weak var viewFromScrollViewDetail: UIView!
+    @IBOutlet weak var imageOfItem: UIImageView!
+    @IBOutlet weak var textViewDescription: UITextView!
     
     var itemText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         itemLabel.text = itemText
+        
+        textViewDescription.isEditable = false
+        
         //nastavovanie farby pozadia
         if UserDefaults.standard.object(forKey: "darkMode") != nil{
             if UserDefaults.standard.bool(forKey: "darkMode") {
                 self.view.backgroundColor = .black
+                viewFromScrollViewDetail.backgroundColor = .black
+                imageOfItem.image = UIImage(named: "noImageDark")
+                textViewDescription.backgroundColor = .black
+                textViewDescription.textColor = .white
             }else{
                 self.view.backgroundColor = .white
+                viewFromScrollViewDetail.backgroundColor = .white
+                imageOfItem.image = UIImage(named: "noImageLight")
+                textViewDescription.backgroundColor = .white
+                textViewDescription.textColor = .black
             }
             
         }else{
             self.view.backgroundColor = .black
+            viewFromScrollViewDetail.backgroundColor = .black
+            imageOfItem.image = UIImage(named: "noImageDark")
+            textViewDescription.backgroundColor = .black
+            textViewDescription.textColor = .white
         }
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -35,12 +53,24 @@ class ItemDetailViewController:  UIViewController{
         if UserDefaults.standard.object(forKey: "darkMode") != nil{
             if UserDefaults.standard.bool(forKey: "darkMode") {
                 self.view.backgroundColor = .black
+                viewFromScrollViewDetail.backgroundColor = .black
+                imageOfItem.image = UIImage(named: "noImageDark")
+                textViewDescription.backgroundColor = .black
+                textViewDescription.textColor = .white
             }else{
                 self.view.backgroundColor = .white
+                viewFromScrollViewDetail.backgroundColor = .white
+                imageOfItem.image = UIImage(named: "noImageLight")
+                textViewDescription.backgroundColor = .white
+                textViewDescription.textColor = .black
             }
             
         }else{
             self.view.backgroundColor = .black
+            viewFromScrollViewDetail.backgroundColor = .black
+            imageOfItem.image = UIImage(named: "noImageDark")
+            textViewDescription.backgroundColor = .black
+            textViewDescription.textColor = .white
         }
     }
     @IBAction func editItem(_ sender: Any) {
