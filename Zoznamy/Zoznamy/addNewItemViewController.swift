@@ -19,6 +19,10 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var viewFromScrollView: UIView!
     @IBOutlet weak var descriptionForItem: UITextView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    //var descriptionTextBottomConstraint: CGFloat!
+    
     //var list = Lists()
     var item = Item()
     
@@ -65,6 +69,36 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
             descriptionForItem.textColor = .white
             //descriptionForItem.backgroundColor = .gray
         }
+        //descriptionTextBottomConstraint = keyboardHeightConstraint.constant
+        //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    /*@objc func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+            //keyboardHeightConstraint.constant = descriptionTextBottomConstraint + keyboardSize.height
+            //UIView.animate(withDuration: 0.15, animations:{
+              //  self.view.layoutIfNeeded()
+            //})
+        }
+    }
+    @objc func keyboardWillHide(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }*/
+    
+    //posuvaju obrazovku nižšie kvôli zobrazovnaiu klavesnice cez textview
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 280), animated: true)
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
     @IBAction func changeImage(_ sender: Any) {
