@@ -14,4 +14,5 @@ class Lists: Object{
     //datum pridania
     @objc dynamic var date = NSDate()
     let items = List<Item>()
+    let tags = List<Tag>()
 }

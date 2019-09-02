@@ -120,6 +120,7 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
         searchBar.delegate = self
     }
     
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
             filteredItems = items
@@ -233,6 +234,12 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     //MARK: Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "addNewItem"{
+            let navViewController = segue.destination as! UINavigationController
+            let addNewItemViewController = navViewController.viewControllers[0] as! addNewItemViewController
+            addNewItemViewController.nameOfList = listText
+        }
         if segue.identifier == "editListSegue"{
             let navViewController = segue.destination as! UINavigationController
             let editListViewController = navViewController.viewControllers[0] as! AddNewListViewController
@@ -248,7 +255,7 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
                 //let item = items![indexPath!.row]
                 let item = filteredItems![indexPath!.row]
                 detailViewController.itemText = item.name
-                
+                detailViewController.nameOfList = listText
                 if (item.text == "") || (item.text == " "){
                     detailViewController.itemDescription = "No description"
                 }else{
@@ -264,13 +271,12 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
             //let item = items![randomItemNumberVar]
             let item = filteredItems![randomItemNumberVar]
             detailViewController.itemText = item.name
-            
+            detailViewController.nameOfList = listText
             if (item.text == "") || (item.text == " "){
                 detailViewController.itemDescription = "No description"
             }else{
                 detailViewController.itemDescription = item.text
             }
-            
         }
         
     }
@@ -289,10 +295,12 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func saveNewItem(segue: UIStoryboardSegue){
         if segue.identifier == "saveNewItemSegue"{
             let addNewItem = segue.source as! addNewItemViewController
+            //kontrola ci nazov nie je prazdny retazec
+            if addNewItem.itemTextField.text! == ""{
+                return
+            }
             let item = Item()
             item.name = addNewItem.itemTextField.text!
-            
-            //nove
             item.text = addNewItem.descriptionForItem.text!
             
             if addNewItem.editItem{
@@ -309,9 +317,16 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
                 //a aby som v opacnom pripade mohol editovat prvok
                 //vytvorene dve jemne pozmenene funkcie v realm manageri
                 if oldItem.name == item.name{
-                    if realmManager.itemDoesExistsInListSameName(item: item, list: listOfItems!) == nil{
+                    if realmManager.itemDoesExistsInListSameName(item: item, list: listOfItems!, oldItem: oldItem) == nil{
                         //zavola funkciu na update zo stareho na novy
                         realmManager.updateItem(oldItem: vysledok, toItem: item)
+                        realmManager.removeIndexTagsForItem(item: vysledok)
+                        for i in 0..<addNewItem.arrayOfChosenTags.count{
+                            let intObj = IntegerObject()
+                            intObj.value = addNewItem.arrayOfChosenTags[i]
+                            //let arrayValues = addNewItem.arrayOfChosenTags
+                            realmManager.addIndexTagForItem(item: vysledok, index: intObj)
+                        }
                         
                     }else{
                         print("Prvok v zozname uz existuje")
@@ -320,16 +335,33 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
                     if realmManager.itemDoesExistsInList(item: item, list: listOfItems!) == nil{
                         //zavola funkciu na update zo stareho na novy
                         realmManager.updateItem(oldItem: vysledok, toItem: item)
+                        realmManager.removeIndexTagsForItem(item: vysledok)
+                        for i in 0..<addNewItem.arrayOfChosenTags.count{
+                            
+                            let intObj = IntegerObject()
+                            intObj.value = addNewItem.arrayOfChosenTags[i]
+                            //let arrayValues = addNewItem.arrayOfChosenTags
+                            realmManager.addIndexTagForItem(item: vysledok, index: intObj)
+                        }
                     }else{
                         print("Prvok v zozname uz existuje")
                     }
                 }
-                
-                
+
             }else{
                 if realmManager.itemDoesExistsInList(item: item, list: listOfItems!) == nil{
                     //ak prvok este v zozname neexistuje tak ho prida
                     realmManager.appendItem(item: item, forList: listOfItems!)
+                    for i in 0..<addNewItem.arrayOfChosenTags.count{
+                        let intObj = IntegerObject()
+                        intObj.value = addNewItem.arrayOfChosenTags[i]
+                        realmManager.addIndexTagForItem(item: item, index: intObj)
+                        let indexnahovno = item.IndexOfTags[0]
+                        let nahonvohodnota = indexnahovno.value
+                        print(nahonvohodnota)
+                        let changedItem = realmManager.getItem(name: item.name)
+                        let hodnota = changedItem?.IndexOfTags[0].value
+                    }
                 }
             }
             

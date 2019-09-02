@@ -20,4 +20,5 @@ class Item: Object {
         return LinkingObjects(fromType: Lists.self, property: "items")
     }*/
     var list = LinkingObjects(fromType: Lists.self, property: "items")
+    let IndexOfTags = List<IntegerObject>()
 }

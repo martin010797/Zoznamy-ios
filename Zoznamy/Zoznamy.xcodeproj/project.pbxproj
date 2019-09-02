@@ -24,6 +24,11 @@
 		1EC16C3822DC757800576CB0 /* AddNewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC16C3722DC757800576CB0 /* AddNewListViewController.swift */; };
 		1EC16C3A22DC7CF600576CB0 /* addNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC16C3922DC7CF600576CB0 /* addNewItemViewController.swift */; };
 		1EC16C3C22DE77DE00576CB0 /* OnOffDarkModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC16C3B22DE77DE00576CB0 /* OnOffDarkModeCell.swift */; };
+		1EC4DA242315B5EA00F51776 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC4DA232315B5E900F51776 /* TagsViewController.swift */; };
+		1EC4DA262315B70100F51776 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC4DA252315B70100F51776 /* TagCell.swift */; };
+		1EC4DA282316A9C000F51776 /* AddNewTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC4DA272316A9C000F51776 /* AddNewTagViewController.swift */; };
+		1EC4DA2A2319A3C400F51776 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC4DA292319A3C400F51776 /* Tag.swift */; };
+		1EC4DA2C2319A5E900F51776 /* IntegerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC4DA2B2319A5E900F51776 /* IntegerObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +50,11 @@
 		1EC16C3722DC757800576CB0 /* AddNewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewListViewController.swift; sourceTree = "<group>"; };
 		1EC16C3922DC7CF600576CB0 /* addNewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNewItemViewController.swift; sourceTree = "<group>"; };
 		1EC16C3B22DE77DE00576CB0 /* OnOffDarkModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnOffDarkModeCell.swift; sourceTree = "<group>"; };
+		1EC4DA232315B5E900F51776 /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
+		1EC4DA252315B70100F51776 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
+		1EC4DA272316A9C000F51776 /* AddNewTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTagViewController.swift; sourceTree = "<group>"; };
+		1EC4DA292319A3C400F51776 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		1EC4DA2B2319A5E900F51776 /* IntegerObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerObject.swift; sourceTree = "<group>"; };
 		A5BEFF771F66FE244A1CCCC1 /* Pods_Zoznamy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zoznamy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E63225691F96928FD476C5 /* Pods-Zoznamy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoznamy.release.xcconfig"; path = "Target Support Files/Pods-Zoznamy/Pods-Zoznamy.release.xcconfig"; sourceTree = "<group>"; };
 		CB5CF2C8E9F33CB684162EBE /* Pods-Zoznamy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoznamy.debug.xcconfig"; path = "Target Support Files/Pods-Zoznamy/Pods-Zoznamy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +78,8 @@
 				1EBEF11222E35C1300770AC6 /* Lists.swift */,
 				1EBEF11422E35C1900770AC6 /* Item.swift */,
 				1EBEF11022E35BFF00770AC6 /* RealmManager.swift */,
+				1EC4DA292319A3C400F51776 /* Tag.swift */,
+				1EC4DA2B2319A5E900F51776 /* IntegerObject.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -102,6 +114,9 @@
 				1EC16C3B22DE77DE00576CB0 /* OnOffDarkModeCell.swift */,
 				1EC16C3122DBBCCD00576CB0 /* ItemsOfListViewController.swift */,
 				1EC16C3922DC7CF600576CB0 /* addNewItemViewController.swift */,
+				1EC4DA232315B5E900F51776 /* TagsViewController.swift */,
+				1EC4DA252315B70100F51776 /* TagCell.swift */,
+				1EC4DA272316A9C000F51776 /* AddNewTagViewController.swift */,
 				1EC16C3322DBBD1500576CB0 /* ItemCell.swift */,
 				1EC16C2122DB321D00576CB0 /* Main.storyboard */,
 				1EC16C3522DC6FE700576CB0 /* ItemDetailViewController.swift */,
@@ -246,17 +261,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EC4DA2A2319A3C400F51776 /* Tag.swift in Sources */,
 				1EC16C2022DB321D00576CB0 /* SettingsViewController.swift in Sources */,
 				1EC16C3A22DC7CF600576CB0 /* addNewItemViewController.swift in Sources */,
+				1EC4DA262315B70100F51776 /* TagCell.swift in Sources */,
 				1EBEF11122E35BFF00770AC6 /* RealmManager.swift in Sources */,
 				1EC16C3622DC6FE700576CB0 /* ItemDetailViewController.swift in Sources */,
 				1EC16C3022DB593500576CB0 /* ListCell.swift in Sources */,
+				1EC4DA282316A9C000F51776 /* AddNewTagViewController.swift in Sources */,
 				1EBEF11322E35C1300770AC6 /* Lists.swift in Sources */,
 				1EC16C3422DBBD1500576CB0 /* ItemCell.swift in Sources */,
 				1EBEF11522E35C1900770AC6 /* Item.swift in Sources */,
 				1EC16C1C22DB321D00576CB0 /* AppDelegate.swift in Sources */,
 				1EC16C1E22DB321D00576CB0 /* ListsViewController.swift in Sources */,
+				1EC4DA2C2319A5E900F51776 /* IntegerObject.swift in Sources */,
 				1EC16C3222DBBCCD00576CB0 /* ItemsOfListViewController.swift in Sources */,
+				1EC4DA242315B5EA00F51776 /* TagsViewController.swift in Sources */,
 				1EC16C3822DC757800576CB0 /* AddNewListViewController.swift in Sources */,
 				1EC16C3C22DE77DE00576CB0 /* OnOffDarkModeCell.swift in Sources */,
 			);

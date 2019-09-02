@@ -185,8 +185,12 @@ class ListsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func saveNewList(segue: UIStoryboardSegue){
         //overime identifikator pre segue kde stlacame Save na pridavani zoznamu
         if segue.identifier == "saveNewListSegue" {
-            //vytvorenie instanice z kade chceme data preniest
+            //vytvorenie instancie z kade chceme data preniest
             let addNewListViewController = segue.source as! AddNewListViewController
+            //ak je pre nazov prazdny retazec tak vyskoci z funkcie a nic neulozi
+            if addNewListViewController.listTextView.text! == ""{
+                return
+            }
             let list = Lists()
             list.name = addNewListViewController.listTextView.text!
             if addNewListViewController.editList{

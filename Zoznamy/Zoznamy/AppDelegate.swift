@@ -133,9 +133,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //pri uprave databazy
         //ak nieco zmenime v databaze tak treba zmenit verziu na vyššie číslo aj v podmienke
         let config = Realm.Configuration(
-            schemaVersion: 2,
+            schemaVersion: 3,
             migrationBlock: { migration, oldSchemaVersion in
-                if (oldSchemaVersion < 2){
+                if (oldSchemaVersion < 3){
             }
         })
     

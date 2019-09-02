@@ -17,6 +17,7 @@ class ItemDetailViewController:  UIViewController{
     
     var itemText = ""
     var itemDescription = ""
+    var nameOfList = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +90,7 @@ class ItemDetailViewController:  UIViewController{
             editItemViewController.itemText = itemText
             editItemViewController.itemDescription = itemDescription
             editItemViewController.editItem = true
+            editItemViewController.nameOfList = nameOfList
         }
     }
 }

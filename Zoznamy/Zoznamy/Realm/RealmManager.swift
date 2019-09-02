@@ -32,6 +32,19 @@ class RealmManager {
         }
         return nil
     }
+    func getItem(name: String) ->Item?{
+        let realm = try! Realm()
+        
+        let items = realm.objects(Item.self).filter("name = %@", name)
+        let count = items.count
+        if items.count > 0{
+            //let name = items[0].name
+            //let desc = items[0].text
+            //let tags = items[0].IndexOfTags
+            return items[0]
+        }
+        return nil
+    }
     
     //skusobne
     func allItemsOfList(list: Lists) ->Results<Item>{
@@ -73,7 +86,7 @@ class RealmManager {
         
     }
     //overuje ci existuje prvok v zozname pokial sa nemenilo meno v editovani
-    func itemDoesExistsInListSameName(item: Item, list: Lists) -> Item?{
+    func itemDoesExistsInListSameName(item: Item, list: Lists, oldItem: Item) -> Item?{
         let realm = try! Realm()
         let lists = realm.objects(Lists.self).filter("name = %@", list.name)
         if lists.count == 0{
@@ -83,10 +96,15 @@ class RealmManager {
             var items = lists[0].items.filter("name = %@", item.name)
             //items = lists[0].items.filter("text = %@", item.text)
             items = items.filter("text = %@", item.text)
+            //items = items.filter("date = %@", item.date)
             //let items = realm.objects(Item.self).filter("name = %@", item.name)
             if items.count > 0{
                 //ak existuje uz prvok v zozname
-                return items[0]
+                if items[0].date == oldItem.date{
+                    return nil
+                }else{
+                    return items[0]
+                }
             }
             //ak prvok neexistuje v zozname
             return nil
@@ -160,11 +178,6 @@ class RealmManager {
         }
     }
     
-    //func removeList(list: Lists){
-       // let realm = try! Realm()
-        //dokoncit
-    //}
-    
     func deleteItem(item: Item) {
         let realm = try! Realm()
         
@@ -191,6 +204,67 @@ class RealmManager {
             try! realm.write {
                 realm.delete(list)
             }
+        }
+    }
+    
+    
+    /*func itemDoesExistsInListSameName(item: Item, list: Lists) -> Item?{
+     let realm = try! Realm()
+     let lists = realm.objects(Lists.self).filter("name = %@", list.name)
+     if lists.count == 0{
+     //ak zoznam neexistuje
+     return nil
+     }else{
+     var items = lists[0].items.filter("name = %@", item.name)
+     //items = lists[0].items.filter("text = %@", item.text)
+     items = items.filter("text = %@", item.text)
+     //let items = realm.objects(Item.self).filter("name = %@", item.name)
+     if items.count > 0{
+     //ak existuje uz prvok v zozname
+     return items[0]
+     }
+     //ak prvok neexistuje v zozname
+     return nil
+     }
+     
+     }*/
+    func tagDoesExistsInList(tag: Tag, list: Lists) -> Tag?{
+        let realm = try! Realm()
+        let lists = realm.objects(Lists.self).filter("name = %@", list.name)
+        if lists.count == 0{
+            //ak neexistuje dany zoznam
+            return nil
+        }else{
+            var tags = lists[0].tags.filter("nameOfTag = %@", tag.nameOfTag)
+            if tags.count > 0{
+                //ak existuje tag v zozname tak ho vrati
+                return tags[0]
+            }
+            //ak tag neexistuje v zozname
+            return nil
+        }
+    }
+    func addNewTag(list: Lists, tag: Tag){
+        let realm = try! Realm()
+        
+        try! realm.write {
+            list.tags.append(tag)
+        }
+    }
+    
+    func removeIndexTagsForItem(item: Item){
+        let realm = try! Realm()
+        
+        try! realm.write {
+            item.IndexOfTags.removeAll()
+        }
+    }
+    
+    func addIndexTagForItem(item: Item, index: IntegerObject){
+        let realm = try! Realm()
+        
+        try! realm.write {
+            item.IndexOfTags.append(index)
         }
     }
 }
