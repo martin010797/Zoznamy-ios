@@ -249,34 +249,56 @@
             <objects>
                 <viewController id="SxJ-cJ-oZO" customClass="ItemDetailViewController" customModule="Zoznamy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VuR-Rl-DUB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="670"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="850"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04i-eZ-2kC">
-                                <rect key="frame" x="0.0" y="64" width="320" height="557"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="737"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TUM-ZR-ErK">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="670"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="850"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="G2u-b0-u9b">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="95.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="121.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="54"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wRq-TB-loI">
-                                                <rect key="frame" x="8" y="112" width="304" height="200"/>
+                                                <rect key="frame" x="8" y="134" width="304" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="8ea-Oj-abC"/>
                                                 </constraints>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P4C-v9-Yj7">
-                                                <rect key="frame" x="8" y="320" width="304" height="300"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lHT-c1-rXD">
+                                                <rect key="frame" x="8" y="371" width="304" height="60"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="CoF-yw-IQX"/>
+                                                    <constraint firstAttribute="height" constant="60" id="7Oi-zr-4tw"/>
                                                 </constraints>
-                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaureiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTE-ZI-zXR">
+                                                <rect key="frame" x="8" y="342" width="304" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCb-wT-bYF">
+                                                <rect key="frame" x="8" y="439" width="304" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P4C-v9-Yj7">
+                                                <rect key="frame" x="8" y="468" width="304" height="300"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="Qf0-T1-zXv"/>
+                                                </constraints>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaureiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -284,15 +306,24 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="P4C-v9-Yj7" secondAttribute="trailing" constant="8" id="2yg-iP-Yg3"/>
+                                            <constraint firstItem="lHT-c1-rXD" firstAttribute="top" secondItem="DTE-ZI-zXR" secondAttribute="bottom" constant="8" id="3HX-4K-nfm"/>
+                                            <constraint firstAttribute="trailing" secondItem="lHT-c1-rXD" secondAttribute="trailing" constant="8" id="6ma-Ot-PGu"/>
+                                            <constraint firstItem="lHT-c1-rXD" firstAttribute="leading" secondItem="TUM-ZR-ErK" secondAttribute="leading" constant="8" id="8pF-19-I41"/>
                                             <constraint firstItem="G2u-b0-u9b" firstAttribute="top" secondItem="TUM-ZR-ErK" secondAttribute="top" id="HpJ-jk-2Ck"/>
                                             <constraint firstItem="G2u-b0-u9b" firstAttribute="leading" secondItem="TUM-ZR-ErK" secondAttribute="leading" id="RuI-Rp-EjG"/>
+                                            <constraint firstItem="P4C-v9-Yj7" firstAttribute="top" secondItem="VCb-wT-bYF" secondAttribute="bottom" constant="8" id="Se0-iH-lKh"/>
                                             <constraint firstAttribute="trailing" secondItem="wRq-TB-loI" secondAttribute="trailing" constant="8" id="Whs-uT-AOp"/>
-                                            <constraint firstItem="wRq-TB-loI" firstAttribute="top" secondItem="TUM-ZR-ErK" secondAttribute="top" constant="112" id="bpv-Vp-nzZ"/>
+                                            <constraint firstItem="wRq-TB-loI" firstAttribute="top" secondItem="G2u-b0-u9b" secondAttribute="bottom" constant="12.5" id="bem-iq-bfT"/>
+                                            <constraint firstItem="DTE-ZI-zXR" firstAttribute="leading" secondItem="TUM-ZR-ErK" secondAttribute="leading" constant="8" id="eN7-wD-b6n"/>
                                             <constraint firstItem="G2u-b0-u9b" firstAttribute="height" secondItem="TUM-ZR-ErK" secondAttribute="height" multiplier="1/7" id="efg-fD-b85"/>
                                             <constraint firstItem="P4C-v9-Yj7" firstAttribute="leading" secondItem="TUM-ZR-ErK" secondAttribute="leading" constant="8" id="hKG-Ff-atr"/>
-                                            <constraint firstAttribute="height" constant="670" id="lIi-OJ-wMT"/>
-                                            <constraint firstItem="P4C-v9-Yj7" firstAttribute="top" secondItem="wRq-TB-loI" secondAttribute="bottom" constant="8" id="n2L-Yp-TWC"/>
+                                            <constraint firstItem="VCb-wT-bYF" firstAttribute="leading" secondItem="TUM-ZR-ErK" secondAttribute="leading" constant="8" id="jFA-ar-FkR"/>
+                                            <constraint firstItem="DTE-ZI-zXR" firstAttribute="top" secondItem="wRq-TB-loI" secondAttribute="bottom" constant="8" id="jeE-jc-jhc"/>
+                                            <constraint firstAttribute="height" constant="850" id="lIi-OJ-wMT"/>
+                                            <constraint firstAttribute="trailing" secondItem="VCb-wT-bYF" secondAttribute="trailing" constant="8" id="uTK-VB-5AI"/>
                                             <constraint firstAttribute="trailing" secondItem="G2u-b0-u9b" secondAttribute="trailing" id="uk9-NZ-7qc"/>
+                                            <constraint firstAttribute="trailing" secondItem="DTE-ZI-zXR" secondAttribute="trailing" constant="8" id="wfh-mi-IaZ"/>
+                                            <constraint firstItem="VCb-wT-bYF" firstAttribute="top" secondItem="lHT-c1-rXD" secondAttribute="bottom" constant="8" id="x79-xx-6KP"/>
                                             <constraint firstItem="wRq-TB-loI" firstAttribute="leading" secondItem="TUM-ZR-ErK" secondAttribute="leading" constant="8" id="xEC-Qn-Fd1"/>
                                         </constraints>
                                     </view>
@@ -322,18 +353,19 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="320" height="670"/>
+                    <size key="freeformSize" width="320" height="850"/>
                     <connections>
                         <outlet property="imageOfItem" destination="wRq-TB-loI" id="eP6-s3-Zj7"/>
                         <outlet property="itemLabel" destination="G2u-b0-u9b" id="9rR-X5-4L3"/>
                         <outlet property="textViewDescription" destination="P4C-v9-Yj7" id="lGz-wg-O8r"/>
+                        <outlet property="textViewTags" destination="lHT-c1-rXD" id="jIa-Cm-FXE"/>
                         <outlet property="viewFromScrollViewDetail" destination="TUM-ZR-ErK" id="opG-Ae-knu"/>
                         <segue destination="gtT-ot-ja3" kind="presentation" identifier="editItemSegue" id="YBN-Sd-Vzo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uea-Dh-0DJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3354" y="-266"/>
+            <point key="canvasLocation" x="3352.5" y="-266.19718309859155"/>
         </scene>
         <!--SettingsViewController-->
         <scene sceneID="wg7-f3-ORb">
@@ -519,7 +551,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="gdP-om-wbv"/>
                                                 </constraints>
-                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -653,8 +685,9 @@
                     <navigationItem key="navigationItem" id="viC-Ap-1fy">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="u95-dI-Ykx">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WEc-O5-CWe">
-                                <rect key="frame" x="16" y="7" width="71" height="30"/>
+                                <rect key="frame" x="16" y="5.5" width="71" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="donePressed:" destination="A0F-QL-MLW" eventType="touchUpInside" id="iCm-II-L1m"/>
@@ -784,7 +817,7 @@
         <image name="second" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="p6M-5x-F2B"/>
+        <segue reference="YBN-Sd-Vzo"/>
         <segue reference="Bjk-bm-xch"/>
     </inferredMetricsTieBreakers>
 </document>

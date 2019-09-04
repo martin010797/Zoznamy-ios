@@ -14,10 +14,12 @@ class ItemDetailViewController:  UIViewController{
     @IBOutlet weak var viewFromScrollViewDetail: UIView!
     @IBOutlet weak var imageOfItem: UIImageView!
     @IBOutlet weak var textViewDescription: UITextView!
+    @IBOutlet weak var textViewTags: UITextView!
     
     var itemText = ""
     var itemDescription = ""
     var nameOfList = ""
+    let realmManager = RealmManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,28 @@ class ItemDetailViewController:  UIViewController{
         textViewDescription.text = itemDescription
         
         textViewDescription.isEditable = false
+        textViewTags.isEditable = false
+        
+        let editedItem = realmManager.getItem(name: itemText)
+        let count = editedItem!.IndexOfTags.count
+        if count == 0{
+            textViewTags.text = "No tags"
+        }else{
+            textViewTags.text = ""
+        }
+        for i in 0..<count{
+            var nameOfTag = ""
+            //let editedItem = realmManager.getItem(name: itemText)
+            let list = realmManager.getList(name: nameOfList)
+            let index = editedItem?.IndexOfTags[i].value
+            nameOfTag = (list?.tags[index!].nameOfTag)!
+            if i == 0{
+                textViewTags.text = "#" + nameOfTag
+            }else{
+                textViewTags.text = textViewTags.text + " #" + nameOfTag
+            }
+            
+        }
         
         //nastavovanie farby pozadia
         if UserDefaults.standard.object(forKey: "darkMode") != nil{
@@ -34,12 +58,16 @@ class ItemDetailViewController:  UIViewController{
                 imageOfItem.image = UIImage(named: "noImageDark")
                 textViewDescription.backgroundColor = .black
                 textViewDescription.textColor = .white
+                textViewTags.backgroundColor = .black
+                textViewTags.textColor = .white
             }else{
                 self.view.backgroundColor = .white
                 viewFromScrollViewDetail.backgroundColor = .white
                 imageOfItem.image = UIImage(named: "noImageLight")
                 textViewDescription.backgroundColor = .white
                 textViewDescription.textColor = .black
+                textViewTags.backgroundColor = .white
+                textViewTags.textColor = .black
             }
             
         }else{
@@ -48,6 +76,8 @@ class ItemDetailViewController:  UIViewController{
             imageOfItem.image = UIImage(named: "noImageDark")
             textViewDescription.backgroundColor = .black
             textViewDescription.textColor = .white
+            textViewTags.backgroundColor = .black
+            textViewTags.textColor = .white
         }
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -60,12 +90,16 @@ class ItemDetailViewController:  UIViewController{
                 imageOfItem.image = UIImage(named: "noImageDark")
                 textViewDescription.backgroundColor = .black
                 textViewDescription.textColor = .white
+                textViewTags.backgroundColor = .black
+                textViewTags.textColor = .white
             }else{
                 self.view.backgroundColor = .white
                 viewFromScrollViewDetail.backgroundColor = .white
                 imageOfItem.image = UIImage(named: "noImageLight")
                 textViewDescription.backgroundColor = .white
                 textViewDescription.textColor = .black
+                textViewTags.backgroundColor = .white
+                textViewTags.textColor = .black
             }
             
         }else{
@@ -74,6 +108,8 @@ class ItemDetailViewController:  UIViewController{
             imageOfItem.image = UIImage(named: "noImageDark")
             textViewDescription.backgroundColor = .black
             textViewDescription.textColor = .white
+            textViewTags.backgroundColor = .black
+            textViewTags.textColor = .white
         }
     }
     @IBAction func editItem(_ sender: Any) {

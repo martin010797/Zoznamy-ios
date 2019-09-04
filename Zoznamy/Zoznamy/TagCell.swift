@@ -12,7 +12,6 @@ class TagCell: UITableViewCell {
     
     @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var buttonTagTicker: UIButton!
-    //var selection = true
     
     @IBAction func tappedTicker(_ sender: Any) {
         buttonTagTicker.isSelected = !buttonTagTicker.isSelected

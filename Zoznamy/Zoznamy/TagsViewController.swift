@@ -24,10 +24,13 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "My tags"
+        
         tableView.delegate = self
         tableView.dataSource = self
         item = realmManager.getItem(name: nameOfItem)
         listOfItems = realmManager.getList(name: nameOfList)
+        
         
         //pridavanie tacidla Done pre vratenie
         //self.navigationItem.hidesBackButton = true
@@ -38,32 +41,6 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
-
-    
-    //kvoli pridaniu tlacidla pre Done
-    /*@objc func back(sender: UIBarButtonItem) {
-        // Perform your custom actions
-        // ...
-        // Go back to the previous ViewController
-        
-        //nemozem lebo dany prvok sa este ani nemusi vytvorit
-        //realmManager.removeIndexTagsForItem(item: item!)
-        for i in 0...((listOfItems?.tags.count)!)-1 {
-            let tagCellIndexPath = NSIndexPath(row: i, section: 0)
-            let cell = tableView.cellForRow(at: tagCellIndexPath as IndexPath)! as! TagCell
-            if cell.buttonTagTicker.isSelected{
-                //ak je zaciarknute v danej bunke tak jej index ulozi do pola
-                //asi aj nepotrebne
-                arrayOfChosenTags.append(i)
-                //let intObj = IntegerObject()
-                //intObj.value = i
-                //realmManager.addIndexTagForItem(item: item!, index: intObj)
-            }
-        }
-        
-        _ = navigationController?.popViewController(animated: true)
-    }*/
-    
     //MARK: Table View Data Source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,13 +55,15 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
         if arrayOfChosenTags.contains(indexPath.row){
             cell.buttonTagTicker.isSelected = true
         }
-        //cell.buttonTagTicker.
+        //cell.accessoryView
         
         let origImage = UIImage(named: "Image")
         let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
         cell.buttonTagTicker.setTitle("", for: .selected)
         cell.buttonTagTicker.setTitle("", for: .normal)
         cell.buttonTagTicker.setImage(tintedImage, for: .selected)
+        
+        //cell.accessoryView = tintedImage
         
         let origImage2 = UIImage(named: "Image-1")
         let tintedImage2 = origImage2?.withRenderingMode(.alwaysTemplate)
@@ -98,20 +77,35 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    //mazanie prvku
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            //let item = filteredItems![indexPath.row]
+            let list = realmManager.getList(name: nameOfList)
+            let index = indexPath.row
+            realmManager.deleteTag(list: list!, indexOfTag: indexPath.row)
+            //items = realmManager.allItemsOfList(list: listOfItems!)
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            if arrayOfChosenTags.contains(indexPath.row){
+                var removedIndex = -1
+                for i in 0..<arrayOfChosenTags.count{
+                    if arrayOfChosenTags[i] == indexPath.row{
+                        removedIndex = i
+                    }
+                }
+                if removedIndex != -1{
+                    arrayOfChosenTags.remove(at: removedIndex)
+                }
+            }
+        }
+    }
+    
     // MARK: - Table View Delegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addNewTagSegue"{
-            let navViewController = segue.destination as! UINavigationController
-            let addNewTagViewController = navViewController.viewControllers[0] as! AddNewTagViewController
-            addNewTagViewController.tagName = 
-        }
-    }*/
-    
     
     @IBAction func addNewTag(_ sender: Any) {
         performSegue(withIdentifier: "addNewTagSegue", sender: self)
@@ -137,7 +131,7 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    //
+    //pada ked je viac tagov ako na jednej obrazovke
     @IBAction func donePressed(_ sender: Any) {
         arrayOfChosenTags.removeAll()
         for i in 0..<(listOfItems?.tags.count)! {
@@ -151,5 +145,11 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 //realmManager.addIndexTagForItem(item: item!, index: intObj)
             }
         }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        print("im here")
+        print("s")
     }
 }

@@ -63,7 +63,12 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
                 let index = editedItem?.IndexOfTags[i].value
                 arrayOfChosenTags.append(index!)
                 nameOfTag = (list?.tags[index!].nameOfTag)!
-                textViewTags.text = textViewTags.text + " " + nameOfTag
+                if i == 0{
+                    textViewTags.text = "#" + nameOfTag
+                }else{
+                    textViewTags.text = textViewTags.text + " #" + nameOfTag
+                }
+                
             }
         }else{
             descriptionForItem.text = "No description"
@@ -80,12 +85,14 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
                 viewFromScrollView.backgroundColor = .black
                 descriptionForItem.textColor = .white
                 textViewTags.textColor = .white
+                textViewTags.backgroundColor = .black
                 //descriptionForItem.backgroundColor = .gray
             }else{
                 self.view.backgroundColor = .white
                 imageView.image = UIImage(named: "noImageLight")
                 viewFromScrollView.backgroundColor = .white
                 //descriptionForItem.backgroundColor = .gray
+                textViewTags.backgroundColor = .white
             }
             
         }else{
@@ -94,6 +101,7 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
             viewFromScrollView.backgroundColor = .black
             descriptionForItem.textColor = .white
             textViewTags.textColor = .white
+            textViewTags.backgroundColor = .black
             //descriptionForItem.backgroundColor = .gray
         }
         itemTextField.inputAccessoryView = self.doneButtonTextField()
@@ -281,7 +289,11 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
             //let index = editedItem?.IndexOfTags[i].value
             //arrayOfChosenTags.append(index!)
             nameOfTag = (list?.tags[arrayOfChosenTags[i]].nameOfTag)!
-            textViewTags.text = textViewTags.text + " " + nameOfTag
+            if i == 0{
+                textViewTags.text = "#" + nameOfTag
+            }else{
+                textViewTags.text = textViewTags.text + " #" + nameOfTag
+            }
         }
     }
     

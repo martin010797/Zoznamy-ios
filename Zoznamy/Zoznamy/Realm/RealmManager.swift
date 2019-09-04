@@ -182,6 +182,7 @@ class RealmManager {
         let realm = try! Realm()
         
         try! realm.write {
+            item.IndexOfTags.removeAll()
             realm.delete(item)
         }
     }
@@ -202,6 +203,7 @@ class RealmManager {
                 deleteItem(item: list.items[0])
             }
             try! realm.write {
+                list.tags.removeAll()
                 realm.delete(list)
             }
         }
@@ -265,6 +267,37 @@ class RealmManager {
         
         try! realm.write {
             item.IndexOfTags.append(index)
+        }
+    }
+    
+    func deleteTag(list: Lists, indexOfTag: Int){
+        let realm = try! Realm()
+        //let tagToRemove = list.tags[indexOfTag]
+        try! realm.write {
+            //vymazanie tagu zo zoznamu
+            list.tags.remove(at: indexOfTag)
+        }
+        for i in 0..<list.items.count {
+            let itemWithChangingIndexTags = list.items[i]
+            let count = itemWithChangingIndexTags.IndexOfTags.count
+            var deleteTag = false
+            var indexOfDeletedTag = 0
+            for j in 0..<count{
+                if itemWithChangingIndexTags.IndexOfTags[j].value == indexOfTag{
+                    deleteTag = true
+                    indexOfDeletedTag = j
+                }
+                if itemWithChangingIndexTags.IndexOfTags[j].value > indexOfTag{
+                    try! realm.write {
+                        itemWithChangingIndexTags.IndexOfTags[j].value -= 1
+                    }
+                }
+            }
+            if deleteTag{
+                try! realm.write {
+                    itemWithChangingIndexTags.IndexOfTags.remove(at: indexOfDeletedTag)
+                }
+            }
         }
     }
 }
