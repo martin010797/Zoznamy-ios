@@ -288,6 +288,7 @@ class RealmManager {
                     indexOfDeletedTag = j
                 }
                 if itemWithChangingIndexTags.IndexOfTags[j].value > indexOfTag{
+                    print("aaa")
                     try! realm.write {
                         itemWithChangingIndexTags.IndexOfTags[j].value -= 1
                     }

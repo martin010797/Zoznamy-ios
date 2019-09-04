@@ -31,7 +31,6 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
         item = realmManager.getItem(name: nameOfItem)
         listOfItems = realmManager.getList(name: nameOfList)
         
-        
         //pridavanie tacidla Done pre vratenie
         //self.navigationItem.hidesBackButton = true
         //let newBackButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(TagsViewController.back(sender:)))
@@ -53,17 +52,24 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let tag = listOfItems!.tags[indexPath.row]
         cell.tagLabel.text = tag.nameOfTag
         if arrayOfChosenTags.contains(indexPath.row){
-            cell.buttonTagTicker.isSelected = true
+            //cell.buttonTagTicker.isSelected = true
+            cell.accessoryType = .checkmark
+            cell.tagIsSelected = true
+        }else{
+            cell.accessoryType = .none
+            cell.tagIsSelected = false
         }
-        //cell.accessoryView
+        /*let origImage = UIImage(named: "Image")
+        let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
+        let imageView = UIImageView(image: tintedImage)
+        cell.accessoryView = imageView*/
         
-        let origImage = UIImage(named: "Image")
+        
+        /*let origImage = UIImage(named: "Image")
         let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
         cell.buttonTagTicker.setTitle("", for: .selected)
         cell.buttonTagTicker.setTitle("", for: .normal)
         cell.buttonTagTicker.setImage(tintedImage, for: .selected)
-        
-        //cell.accessoryView = tintedImage
         
         let origImage2 = UIImage(named: "Image-1")
         let tintedImage2 = origImage2?.withRenderingMode(.alwaysTemplate)
@@ -72,10 +78,11 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.buttonTagTicker.tintColor = UIColor(red: 12.0/255.0, green: 230.0/255.0, blue: 22.0/255.0, alpha: 1.0)
         }else{
             cell.buttonTagTicker.tintColor = .gray
-        }
+        }*/
         
         return cell
     }
+    
     
     //mazanie prvku
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -87,16 +94,17 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
             //items = realmManager.allItemsOfList(list: listOfItems!)
             
             tableView.deleteRows(at: [indexPath], with: .fade)
-            if arrayOfChosenTags.contains(indexPath.row){
-                var removedIndex = -1
-                for i in 0..<arrayOfChosenTags.count{
-                    if arrayOfChosenTags[i] == indexPath.row{
-                        removedIndex = i
-                    }
+            var removedIndex = -1
+            for i in 0..<arrayOfChosenTags.count{
+                if arrayOfChosenTags[i] == indexPath.row{
+                    removedIndex = i
                 }
-                if removedIndex != -1{
-                    arrayOfChosenTags.remove(at: removedIndex)
+                if arrayOfChosenTags[i] > indexPath.row{
+                    arrayOfChosenTags[i] -= 1
                 }
+            }
+            if removedIndex != -1{
+                arrayOfChosenTags.remove(at: removedIndex)
             }
         }
     }
@@ -104,7 +112,31 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Table View Delegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //tableView.deselectRow(at: indexPath, animated: true)
+        let cell = tableView.cellForRow(at: indexPath) as! TagCell
+        //cell?.accessoryType = .checkmark
         tableView.deselectRow(at: indexPath, animated: true)
+        cell.tagIsSelected.toggle()
+        if cell.tagIsSelected{
+            cell.accessoryType = .checkmark
+            if arrayOfChosenTags.contains(indexPath.row) == false{
+                arrayOfChosenTags.append(indexPath.row)
+            }
+        }else{
+            cell.accessoryType = .none
+            if arrayOfChosenTags.contains(indexPath.row){
+                var indexRemovedTag = -1
+                for i in 0..<arrayOfChosenTags.count{
+                    let value = arrayOfChosenTags[i]
+                    if value == indexPath.row{
+                        indexRemovedTag = i
+                    }
+                }
+                if indexRemovedTag != -1{
+                    arrayOfChosenTags.remove(at: indexRemovedTag)
+                }
+            }
+        }
     }
     
     @IBAction func addNewTag(_ sender: Any) {
@@ -133,7 +165,7 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //pada ked je viac tagov ako na jednej obrazovke
     @IBAction func donePressed(_ sender: Any) {
-        arrayOfChosenTags.removeAll()
+        /*arrayOfChosenTags.removeAll()
         for i in 0..<(listOfItems?.tags.count)! {
             let tagCellIndexPath = NSIndexPath(row: i, section: 0)
             let cell = tableView.cellForRow(at: tagCellIndexPath as IndexPath)! as! TagCell
@@ -144,12 +176,8 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 //intObj.value = i
                 //realmManager.addIndexTagForItem(item: item!, index: intObj)
             }
-        }
-    }
-    
-    
-    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        print("im here")
-        print("s")
+        }*/
+        //let array = arrayOfChosenTags
+        //print("aa")
     }
 }

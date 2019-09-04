@@ -288,6 +288,7 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
             let list = realmManager.getList(name: nameOfList)
             //let index = editedItem?.IndexOfTags[i].value
             //arrayOfChosenTags.append(index!)
+            //tu pada
             nameOfTag = (list?.tags[arrayOfChosenTags[i]].nameOfTag)!
             if i == 0{
                 textViewTags.text = "#" + nameOfTag

@@ -635,38 +635,27 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tagCell" rowHeight="45" id="lxd-uF-9Le" customClass="TagCell" customModule="Zoznamy" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="tagCell" rowHeight="45" id="lxd-uF-9Le" customClass="TagCell" customModule="Zoznamy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lxd-uF-9Le" id="sNW-Hk-jhM">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lxd-uF-9Le" id="sNW-Hk-jhM">
+                                            <rect key="frame" x="0.0" y="0.0" width="281" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Tag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zp8-Mw-h3W">
-                                                    <rect key="frame" x="15" y="24.5" width="76" height="21"/>
+                                                    <rect key="frame" x="15" y="24" width="76" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrQ-Cy-9Da">
-                                                    <rect key="frame" x="255" y="13.5" width="54" height="34"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="tappedTicker:" destination="lxd-uF-9Le" eventType="touchUpInside" id="AD5-An-sbe"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="zrQ-Cy-9Da" secondAttribute="bottom" constant="11" id="93y-XF-gqN"/>
                                                 <constraint firstItem="Zp8-Mw-h3W" firstAttribute="top" secondItem="sNW-Hk-jhM" secondAttribute="topMargin" constant="13" id="IS2-fd-F45"/>
-                                                <constraint firstAttribute="trailing" secondItem="zrQ-Cy-9Da" secondAttribute="trailing" constant="11" id="SsJ-2I-vGB"/>
                                                 <constraint firstItem="Zp8-Mw-h3W" firstAttribute="leading" secondItem="sNW-Hk-jhM" secondAttribute="leading" constant="15" id="XtS-ug-GVJ"/>
-                                                <constraint firstItem="zrQ-Cy-9Da" firstAttribute="top" secondItem="sNW-Hk-jhM" secondAttribute="top" constant="13" id="oqc-kx-0KN"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Zp8-Mw-h3W" secondAttribute="bottom" constant="11" id="xds-2t-iCU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="buttonTagTicker" destination="zrQ-Cy-9Da" id="KIW-PN-VDZ"/>
                                             <outlet property="tagLabel" destination="Zp8-Mw-h3W" id="8nX-sv-PsC"/>
                                         </connections>
                                     </tableViewCell>
