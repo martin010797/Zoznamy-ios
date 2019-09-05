@@ -23,18 +23,11 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.title = "My tags"
-        
         tableView.delegate = self
         tableView.dataSource = self
         item = realmManager.getItem(name: nameOfItem)
         listOfItems = realmManager.getList(name: nameOfList)
-        
-        //pridavanie tacidla Done pre vratenie
-        //self.navigationItem.hidesBackButton = true
-        //let newBackButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(TagsViewController.back(sender:)))
-        //self.navigationItem.leftBarButtonItem = newBackButton
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,33 +45,28 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let tag = listOfItems!.tags[indexPath.row]
         cell.tagLabel.text = tag.nameOfTag
         if arrayOfChosenTags.contains(indexPath.row){
-            //cell.buttonTagTicker.isSelected = true
-            cell.accessoryType = .checkmark
+            let origImage = UIImage(named: "Image")
+            let imageView = UIImageView(image: origImage)
+            cell.accessoryView = imageView
             cell.tagIsSelected = true
         }else{
-            cell.accessoryType = .none
+            if UserDefaults.standard.object(forKey: "darkMode") != nil{
+                if UserDefaults.standard.bool(forKey: "darkMode") {
+                    let origImage = UIImage(named: "tagNotSelectedDarkMode")
+                    let imageView = UIImageView(image: origImage)
+                    cell.accessoryView = imageView
+                }else{
+                    let origImage = UIImage(named: "Image-1")
+                    let imageView = UIImageView(image: origImage)
+                    cell.accessoryView = imageView
+                }
+            }else{
+                let origImage = UIImage(named: "tagNotSelectedDarkMode")
+                let imageView = UIImageView(image: origImage)
+                cell.accessoryView = imageView
+            }
             cell.tagIsSelected = false
         }
-        /*let origImage = UIImage(named: "Image")
-        let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
-        let imageView = UIImageView(image: tintedImage)
-        cell.accessoryView = imageView*/
-        
-        
-        /*let origImage = UIImage(named: "Image")
-        let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
-        cell.buttonTagTicker.setTitle("", for: .selected)
-        cell.buttonTagTicker.setTitle("", for: .normal)
-        cell.buttonTagTicker.setImage(tintedImage, for: .selected)
-        
-        let origImage2 = UIImage(named: "Image-1")
-        let tintedImage2 = origImage2?.withRenderingMode(.alwaysTemplate)
-        cell.buttonTagTicker.setImage(tintedImage2, for: .normal)
-        if cell.buttonTagTicker.isSelected{
-            cell.buttonTagTicker.tintColor = UIColor(red: 12.0/255.0, green: 230.0/255.0, blue: 22.0/255.0, alpha: 1.0)
-        }else{
-            cell.buttonTagTicker.tintColor = .gray
-        }*/
         
         return cell
     }
@@ -118,12 +106,28 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.deselectRow(at: indexPath, animated: true)
         cell.tagIsSelected.toggle()
         if cell.tagIsSelected{
-            cell.accessoryType = .checkmark
+            let origImage = UIImage(named: "Image")
+            let imageView = UIImageView(image: origImage)
+            cell.accessoryView = imageView
             if arrayOfChosenTags.contains(indexPath.row) == false{
                 arrayOfChosenTags.append(indexPath.row)
             }
         }else{
-            cell.accessoryType = .none
+            if UserDefaults.standard.object(forKey: "darkMode") != nil{
+                if UserDefaults.standard.bool(forKey: "darkMode") {
+                    let origImage = UIImage(named: "tagNotSelectedDarkMode")
+                    let imageView = UIImageView(image: origImage)
+                    cell.accessoryView = imageView
+                }else{
+                    let origImage = UIImage(named: "Image-1")
+                    let imageView = UIImageView(image: origImage)
+                    cell.accessoryView = imageView
+                }
+            }else{
+                let origImage = UIImage(named: "tagNotSelectedDarkMode")
+                let imageView = UIImageView(image: origImage)
+                cell.accessoryView = imageView
+            }
             if arrayOfChosenTags.contains(indexPath.row){
                 var indexRemovedTag = -1
                 for i in 0..<arrayOfChosenTags.count{
