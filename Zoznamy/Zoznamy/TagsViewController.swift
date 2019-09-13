@@ -23,6 +23,16 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDefaults.standard.object(forKey: "darkMode") != nil{
+            if UserDefaults.standard.bool(forKey: "darkMode") {
+                self.view.backgroundColor = .black
+            }else{
+                self.view.backgroundColor = .white
+            }
+        }else{
+            self.view.backgroundColor = .black
+        }
+        
         self.title = "My tags"
         tableView.delegate = self
         tableView.dataSource = self
@@ -70,7 +80,6 @@ class TagsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
-    
     
     //mazanie prvku
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

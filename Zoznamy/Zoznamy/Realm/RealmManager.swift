@@ -301,4 +301,50 @@ class RealmManager {
             }
         }
     }
+    
+    //skusobna funkcia pre filtrovanie podla tagov
+    func filterByTag(arrayOfItems: Results<Item>, arrayOfIndexes: [Int]) -> Results<Item>{
+        let realm = try! Realm()
+        
+        /*for i in 0..<arrayOfItems.count{
+            try! realm.write {
+                arrayOfItems[i].containTagFromFilter = false
+            }
+        }*/
+        setFalseForFilteringInItems(arrayOfItems: arrayOfItems)
+        
+        for i in 0..<arrayOfIndexes.count{
+            let array = arrayOfItems.filter("ANY IndexOfTags.value = %@", arrayOfIndexes[i])
+            for j in 0..<array.count{
+                try! realm.write {
+                    array[j].containTagFromFilter = true
+                }
+            }
+        }
+        let filteredArray = arrayOfItems.filter("containTagFromFilter == true")
+        return filteredArray
+    }
+    
+    func setFalseForFilteringInItems(arrayOfItems: Results<Item>){
+        let realm = try! Realm()
+        
+        /*let array = arrayOfItems.filter("containTagFromFilter == true")
+        let count = array.count
+        for i in 0..<count{
+            try! realm.write {
+                array[i].containTagFromFilter = false
+            }
+        }*/
+        
+        
+        //funguje ale pomaly
+        for i in 0..<arrayOfItems.count{
+            if arrayOfItems[i].containTagFromFilter{
+                try! realm.write {
+                    arrayOfItems[i].containTagFromFilter = false
+                }
+            }
+        }
+        
+    }
 }

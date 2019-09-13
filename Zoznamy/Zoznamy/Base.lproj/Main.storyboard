@@ -198,22 +198,64 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJo-1V-dAn">
-                                <rect key="frame" x="16" y="484" width="288" height="30"/>
-                                <state key="normal" title="Random Item"/>
+                                <rect key="frame" x="185" y="484" width="37" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="xC5-q9-VsW"/>
+                                </constraints>
+                                <state key="normal" title="Random"/>
                                 <connections>
                                     <action selector="randomItemOfList:" destination="6K4-gB-7iR" eventType="touchUpInside" id="hhb-sQ-ohj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FF-ZF-h9W">
+                                <rect key="frame" x="16" y="484" width="37" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="guf-Sz-2Kz"/>
+                                </constraints>
+                                <state key="normal" title="FIlter"/>
+                                <connections>
+                                    <action selector="chooseTagsForFilter:" destination="6K4-gB-7iR" eventType="touchUpInside" id="1Sx-Pw-qYh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORq-ur-ka4">
+                                <rect key="frame" x="267" y="484" width="37" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="6jD-vn-Fza"/>
+                                </constraints>
+                                <state key="normal" title="Go Up"/>
+                                <connections>
+                                    <action selector="scrollToTop:" destination="6K4-gB-7iR" eventType="touchUpInside" id="RoM-uO-pSu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e74-on-YPM">
+                                <rect key="frame" x="103" y="484" width="37" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="JsQ-IX-140"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelFilteringByTags:" destination="6K4-gB-7iR" eventType="touchUpInside" id="xnQ-KY-ERh"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="GJo-1V-dAn" firstAttribute="leading" secondItem="e74-on-YPM" secondAttribute="trailing" constant="45" id="4kZ-4G-rhq"/>
+                            <constraint firstItem="ORq-ur-ka4" firstAttribute="leading" secondItem="GJo-1V-dAn" secondAttribute="trailing" constant="45" id="C08-Px-veM"/>
                             <constraint firstAttribute="trailing" secondItem="ADm-e6-Yg2" secondAttribute="trailing" id="HTQ-QE-C16"/>
+                            <constraint firstItem="9FF-ZF-h9W" firstAttribute="leading" secondItem="tQO-sh-ySB" secondAttribute="leading" constant="16" id="Mg5-6Z-MeL"/>
                             <constraint firstItem="ADm-e6-Yg2" firstAttribute="top" secondItem="a0w-X3-aEn" secondAttribute="top" constant="20" id="NVB-f3-XFM"/>
+                            <constraint firstItem="e74-on-YPM" firstAttribute="leading" secondItem="9FF-ZF-h9W" secondAttribute="trailing" constant="50" id="T8o-g7-scv"/>
                             <constraint firstItem="ADm-e6-Yg2" firstAttribute="leading" secondItem="a0w-X3-aEn" secondAttribute="leading" id="V2f-Oe-VLA"/>
+                            <constraint firstItem="ORq-ur-ka4" firstAttribute="top" secondItem="ADm-e6-Yg2" secondAttribute="bottom" constant="8" id="VPo-LG-5QT"/>
+                            <constraint firstItem="tQO-sh-ySB" firstAttribute="trailing" secondItem="ORq-ur-ka4" secondAttribute="trailing" constant="16" id="cjH-HG-Uaj"/>
                             <constraint firstItem="GJo-1V-dAn" firstAttribute="top" secondItem="ADm-e6-Yg2" secondAttribute="bottom" constant="8" id="dBg-PN-q0S"/>
+                            <constraint firstItem="9FF-ZF-h9W" firstAttribute="top" secondItem="ADm-e6-Yg2" secondAttribute="bottom" constant="8" id="icA-vq-7hr"/>
                             <constraint firstItem="tQO-sh-ySB" firstAttribute="bottom" secondItem="GJo-1V-dAn" secondAttribute="bottom" constant="5" id="kkp-7a-45r"/>
-                            <constraint firstItem="GJo-1V-dAn" firstAttribute="leading" secondItem="tQO-sh-ySB" secondAttribute="leading" constant="16" id="pTw-4s-jvD"/>
-                            <constraint firstItem="tQO-sh-ySB" firstAttribute="trailing" secondItem="GJo-1V-dAn" secondAttribute="trailing" constant="16" id="qbA-6C-tcZ"/>
+                            <constraint firstItem="tQO-sh-ySB" firstAttribute="bottom" secondItem="e74-on-YPM" secondAttribute="bottom" constant="5" id="oK5-cb-Cja"/>
+                            <constraint firstItem="tQO-sh-ySB" firstAttribute="bottom" secondItem="9FF-ZF-h9W" secondAttribute="bottom" constant="5" id="piE-1P-x45"/>
+                            <constraint firstItem="e74-on-YPM" firstAttribute="top" secondItem="ADm-e6-Yg2" secondAttribute="bottom" constant="8" id="uC6-Vg-oR3"/>
+                            <constraint firstItem="tQO-sh-ySB" firstAttribute="bottom" secondItem="ORq-ur-ka4" secondAttribute="bottom" constant="5" id="vAP-he-QKc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tQO-sh-ySB"/>
                     </view>
@@ -232,12 +274,16 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelFilteringButton" destination="e74-on-YPM" id="DZD-oN-fNN"/>
+                        <outlet property="filterByTagsButton" destination="9FF-ZF-h9W" id="nl7-3p-HgU"/>
+                        <outlet property="goUpButton" destination="ORq-ur-ka4" id="oyq-8v-L0I"/>
                         <outlet property="randomButton" destination="GJo-1V-dAn" id="Q56-Do-Wdi"/>
                         <outlet property="searchBar" destination="IQN-BU-pvR" id="ttX-NS-iao"/>
                         <outlet property="tableView" destination="ADm-e6-Yg2" id="W1k-13-9dh"/>
                         <segue destination="SxJ-cJ-oZO" kind="show" identifier="showItem" id="hrW-aK-YsT"/>
                         <segue destination="gtT-ot-ja3" kind="presentation" identifier="addNewItem" id="p6M-5x-F2B"/>
                         <segue destination="zLh-GO-82v" kind="presentation" identifier="editListSegue" id="UhS-gy-KCa"/>
+                        <segue destination="xgM-Z3-7Fs" kind="presentation" identifier="chooseTagsForFilterSegue" id="RmF-Dm-aXC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WuI-zJ-l4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -366,6 +412,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uea-Dh-0DJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3352.5" y="-266.19718309859155"/>
+        </scene>
+        <!--Filter By Tags View Controller-->
+        <scene sceneID="ZTe-xF-u4o">
+            <objects>
+                <viewController id="tWD-4K-T9j" customClass="FilterByTagsViewController" customModule="Zoznamy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QPB-m6-Nr0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oSN-oc-Noc">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="filterTagCell" rowHeight="45" id="GaM-s2-Ixr" customClass="FilterByTagCell" customModule="Zoznamy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GaM-s2-Ixr" id="LAf-M4-TC4">
+                                            <rect key="frame" x="0.0" y="0.0" width="281" height="44.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Tag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vra-MH-8AS">
+                                                    <rect key="frame" x="30" y="24" width="76" height="9.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Vra-MH-8AS" firstAttribute="leading" secondItem="LAf-M4-TC4" secondAttribute="leadingMargin" constant="15" id="5wn-3R-iPh"/>
+                                                <constraint firstAttribute="bottom" secondItem="Vra-MH-8AS" secondAttribute="bottom" constant="11" id="QUv-4a-eB5"/>
+                                                <constraint firstItem="Vra-MH-8AS" firstAttribute="top" secondItem="LAf-M4-TC4" secondAttribute="topMargin" constant="13" id="bOe-Iy-4CT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tagLabel" destination="Vra-MH-8AS" id="m2X-yU-dPI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oSN-oc-Noc" firstAttribute="trailing" secondItem="iVt-eC-NF4" secondAttribute="trailing" id="W06-cD-oK7"/>
+                            <constraint firstItem="oSN-oc-Noc" firstAttribute="top" secondItem="iVt-eC-NF4" secondAttribute="top" id="cYb-oE-z7Z"/>
+                            <constraint firstItem="oSN-oc-Noc" firstAttribute="bottom" secondItem="iVt-eC-NF4" secondAttribute="bottom" id="ebF-ma-pCa"/>
+                            <constraint firstItem="oSN-oc-Noc" firstAttribute="leading" secondItem="iVt-eC-NF4" secondAttribute="leading" id="h0R-dc-D2i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iVt-eC-NF4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xGi-XD-h3D">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="15T-cM-lwW">
+                            <connections>
+                                <segue destination="Ngm-Hf-ufY" kind="unwind" identifier="cancelFilteringSegue" unwindAction="cancelChoosingTagsForFilterWithSegue:" id="u40-qr-eZ7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Filter" style="plain" id="8DZ-c2-Crb">
+                            <connections>
+                                <segue destination="Ngm-Hf-ufY" kind="unwind" identifier="filterByTagsSegue" unwindAction="filterByChosenTagsWithSegue:" id="2O8-eP-WgN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="oSN-oc-Noc" id="Eyb-cm-03M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B98-qs-qDB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ngm-Hf-ufY" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4359.375" y="576.76056338028172"/>
         </scene>
         <!--SettingsViewController-->
         <scene sceneID="wg7-f3-ORb">
@@ -800,13 +915,31 @@
             </objects>
             <point key="canvasLocation" x="5921" y="-1031"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5ym-kH-k4l">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xgM-Z3-7Fs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kpV-VJ-j2E">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tWD-4K-T9j" kind="relationship" relationship="rootViewController" id="zRQ-rn-E8v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3FV-sj-Yma" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3361.875" y="576.76056338028172"/>
+        </scene>
     </scenes>
     <resources>
         <image name="first" width="23" height="23"/>
         <image name="second" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YBN-Sd-Vzo"/>
-        <segue reference="Bjk-bm-xch"/>
+        <segue reference="p6M-5x-F2B"/>
+        <segue reference="UhS-gy-KCa"/>
     </inferredMetricsTieBreakers>
 </document>

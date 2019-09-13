@@ -13,8 +13,9 @@ class Item: Object {
     
     @objc dynamic var name = ""
     @objc dynamic var date = NSDate()
-    
     @objc dynamic var text  = ""
+    
+    @objc dynamic var containTagFromFilter = false
     
     /*var list: [Lists]{
         return LinkingObjects(fromType: Lists.self, property: "items")

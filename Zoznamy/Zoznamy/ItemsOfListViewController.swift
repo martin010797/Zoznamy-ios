@@ -14,6 +14,9 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var randomButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var filterByTagsButton: UIButton!
+    @IBOutlet weak var cancelFilteringButton: UIButton!
+    @IBOutlet weak var goUpButton: UIButton!
     
     //premenna pre index kvoli zobrazovaniu nahodneho prvku
     var randomItemNumberVar: Int = 0
@@ -26,10 +29,16 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     var listOfItems: Lists?
     var listText = ""
     
+    var arrayOfChosenTagsForFiltering = [Int]()
+    var filteringIsActive = false
+    var filteredItemsByTags: Results<Item>?
+    var allFilteredItemsByChosenTags: Results<Item>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        //cancelFilteringButton.isHidden = true
         title = listText
         
         tableView.estimatedRowHeight = 45
@@ -49,8 +58,20 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.reloadData()
         if UserDefaults.standard.object(forKey: "darkMode") != nil{
             if UserDefaults.standard.bool(forKey: "darkMode") {
+                let cancelFilterImage = UIImage(named: "cancelFilterDarkMode")
+                let tintedCancelFilterImage = cancelFilterImage?.withRenderingMode(.alwaysOriginal)
+                cancelFilteringButton.setTitle("", for: .normal)
+                cancelFilteringButton.setImage(tintedCancelFilterImage, for: .normal)
+                let goUpImage = UIImage(named: "goUpDarkMode")
+                let tintedeGoUpImgae = goUpImage?.withRenderingMode(.alwaysOriginal)
+                goUpButton.setTitle("", for: .normal)
+                goUpButton.setImage(tintedeGoUpImgae, for: .normal)
+                let filterImage = UIImage(named: "filterByTagsDarkMode")
+                let tintedFilterImaged = filterImage?.withRenderingMode(.alwaysOriginal)
+                filterByTagsButton.setTitle("", for: .normal)
+                filterByTagsButton.setImage(tintedFilterImaged, for: .normal)
                 //farba random buttonu
-                randomButton.tintColor = .white
+                //randomButton.tintColor = .white
                 randomButton.backgroundColor = .black
                 randomButton.setTitle("", for: .normal)
                 let origImage = UIImage(named: "random")
@@ -64,8 +85,20 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 self.view.backgroundColor = .black
             }else{
+                let cancelFilterImage = UIImage(named: "cancelFilterLightMode")
+                let tintedCancelFilterImage = cancelFilterImage?.withRenderingMode(.alwaysOriginal)
+                cancelFilteringButton.setTitle("", for: .normal)
+                cancelFilteringButton.setImage(tintedCancelFilterImage, for: .normal)
+                let goUpImage = UIImage(named: "goUpLightMode")
+                let tintedeGoUpImgae = goUpImage?.withRenderingMode(.alwaysOriginal)
+                goUpButton.setTitle("", for: .normal)
+                goUpButton.setImage(tintedeGoUpImgae, for: .normal)
+                let filterImage = UIImage(named: "filterByTagsLightMode")
+                let tintedFilterImaged = filterImage?.withRenderingMode(.alwaysOriginal)
+                filterByTagsButton.setTitle("", for: .normal)
+                filterByTagsButton.setImage(tintedFilterImaged, for: .normal)
                 //random button
-                randomButton.tintColor = .black
+                //randomButton.tintColor = .black
                 randomButton.backgroundColor = .white
                 randomButton.setTitle("", for: .normal)
                 let origImage = UIImage(named: "random")
@@ -82,7 +115,19 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
             }
             
         }else{
-            randomButton.tintColor = .white
+            let cancelFilterImage = UIImage(named: "cancelFilterDarkMode")
+            let tintedCancelFilterImage = cancelFilterImage?.withRenderingMode(.alwaysOriginal)
+            cancelFilteringButton.setTitle("", for: .normal)
+            cancelFilteringButton.setImage(tintedCancelFilterImage, for: .normal)
+            let goUpImage = UIImage(named: "goUpDarkMode")
+            let tintedeGoUpImgae = goUpImage?.withRenderingMode(.alwaysOriginal)
+            goUpButton.setTitle("", for: .normal)
+            goUpButton.setImage(tintedeGoUpImgae, for: .normal)
+            let filterImage = UIImage(named: "filterByTagsDarkMode")
+            let tintedFilterImaged = filterImage?.withRenderingMode(.alwaysOriginal)
+            filterByTagsButton.setTitle("", for: .normal)
+            filterByTagsButton.setImage(tintedFilterImaged, for: .normal)
+            //randomButton.tintColor = .white
             randomButton.backgroundColor = .black
             randomButton.setTitle("", for: .normal)
             let origImage = UIImage(named: "random")
@@ -102,9 +147,18 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     func sortItems(){
         switch searchBar.selectedScopeButtonIndex {
         case 0:
-            filteredItems = filteredItems?.sorted(byKeyPath: "name", ascending: true)
+            if filteringIsActive{
+                filteredItemsByTags = filteredItemsByTags?.sorted(byKeyPath: "name", ascending: true)
+            }else{
+                filteredItems = filteredItems?.sorted(byKeyPath: "name", ascending: true)
+            }
         case 1:
-            filteredItems = filteredItems?.sorted(byKeyPath: "date", ascending: false)
+            if filteringIsActive{
+                filteredItemsByTags = filteredItemsByTags?.sorted(byKeyPath: "date", ascending: false)
+            }else{
+                filteredItems = filteredItems?.sorted(byKeyPath: "date", ascending: false)
+            }
+            //filteredItems = filteredItems?.sorted(byKeyPath: "date", ascending: false)
         default:
             break
         }
@@ -124,20 +178,35 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
             filteredItems = items
+            filteredItemsByTags = allFilteredItemsByChosenTags
             sortItems()
             return
         }
-        //[c] sa dava aby aj z databazy boli udaje lowercased
-        filteredItems = items?.filter("name contains[c] %@", searchBar.text?.lowercased())
+        if filteringIsActive{
+            filteredItemsByTags = allFilteredItemsByChosenTags?.filter("name contains[c] %@", searchBar.text?.lowercased())
+        }else{
+            //[c] sa dava aby aj z databazy boli udaje lowercased
+            filteredItems = items?.filter("name contains[c] %@", searchBar.text?.lowercased())
+        }
         sortItems()
     }
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         switch selectedScope {
         case 0:
-            filteredItems = filteredItems?.sorted(byKeyPath: "name", ascending: true)
+            if filteringIsActive{
+                filteredItemsByTags = filteredItemsByTags?.sorted(byKeyPath: "name", ascending: true)
+            }else{
+                filteredItems = filteredItems?.sorted(byKeyPath: "name", ascending: true)
+            }
+            //filteredItems = filteredItems?.sorted(byKeyPath: "name", ascending: true)
         case 1:
-            filteredItems = filteredItems?.sorted(byKeyPath: "date", ascending: false)
+            if filteringIsActive{
+                filteredItemsByTags = filteredItemsByTags?.sorted(byKeyPath: "date", ascending: false)
+            }else{
+                filteredItems = filteredItems?.sorted(byKeyPath: "date", ascending: false)
+            }
+            //filteredItems = filteredItems?.sorted(byKeyPath: "date", ascending: false)
         default:
             break
         }
@@ -159,11 +228,20 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
              if Maťko.loves.Lucka == true
              do (boztek.na.licko)
              */
-        if (filteredItems?.count)! > 0{
-            let randomNumber = Int.random(in: 0..<(filteredItems?.count)!)
-            randomItemNumberVar = randomNumber
-            performSegue(withIdentifier: "showItem", sender: filteredItems![0] as Item)
+        if filteringIsActive{
+            if (filteredItemsByTags?.count)! > 0{
+                let randomNumber = Int.random(in: 0..<(filteredItemsByTags?.count)!)
+                randomItemNumberVar = randomNumber
+                performSegue(withIdentifier: "showItem", sender: filteredItemsByTags![0] as Item)
+            }
+        }else{
+            if (filteredItems?.count)! > 0{
+                let randomNumber = Int.random(in: 0..<(filteredItems?.count)!)
+                randomItemNumberVar = randomNumber
+                performSegue(withIdentifier: "showItem", sender: filteredItems![0] as Item)
+            }
         }
+        
     }
     
     //MARK: Table View Data Source
@@ -171,13 +249,24 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     //kolko riadkov bude v tabulke resp. v sekcii tabulky
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return (items?.count)!
-        return (filteredItems?.count)!
+        if filteringIsActive{
+            return (filteredItemsByTags?.count)!
+        }else{
+            return (filteredItems?.count)!
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemCell
         //let item = items![indexPath.row]
-        let item = filteredItems![indexPath.row]
+        let item: Item
+        if filteringIsActive{
+            item = filteredItemsByTags![indexPath.row]
+        }else{
+            item = filteredItems![indexPath.row]
+        }
+        
         //cell.itemLabel.text = item.name
         cell.itemTitle.text = item.name
         
@@ -209,7 +298,13 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             //let item = items![indexPath.row]
-            let item = filteredItems![indexPath.row]
+            let item: Item
+            if filteringIsActive{
+                item = filteredItemsByTags![indexPath.row]
+            }else{
+                item = filteredItems![indexPath.row]
+            }
+            //let item = filteredItems![indexPath.row]
             realmManager.deleteItem(item: item)
             items = realmManager.allItemsOfList(list: listOfItems!)
             
@@ -235,6 +330,12 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if segue.identifier == "chooseTagsForFilterSegue"{
+            let navViewController = segue.destination as! UINavigationController
+            let chooseTagsViewController = navViewController.viewControllers[0] as! FilterByTagsViewController
+            chooseTagsViewController.nameOfList = listText
+            chooseTagsViewController.arrayOfChosenTags = arrayOfChosenTagsForFiltering
+        }
         if segue.identifier == "addNewItem"{
             let navViewController = segue.destination as! UINavigationController
             let addNewItemViewController = navViewController.viewControllers[0] as! addNewItemViewController
@@ -252,8 +353,13 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
             
             if segue.identifier == "showItem" {
                 let detailViewController = segue.destination as! ItemDetailViewController
-                //let item = items![indexPath!.row]
-                let item = filteredItems![indexPath!.row]
+                //let item = filteredItems![indexPath!.row]
+                let item: Item
+                if filteringIsActive{
+                    item = filteredItemsByTags![indexPath!.row]
+                }else{
+                    item = filteredItems![indexPath!.row]
+                }
                 detailViewController.itemText = item.name
                 detailViewController.nameOfList = listText
                 if (item.text == "") || (item.text == " "){
@@ -269,7 +375,13 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
         if sender is Item{
             let detailViewController = segue.destination as! ItemDetailViewController
             //let item = items![randomItemNumberVar]
-            let item = filteredItems![randomItemNumberVar]
+            let item: Item
+            if filteringIsActive{
+                item = filteredItemsByTags![randomItemNumberVar]
+            }else{
+                item = filteredItems![randomItemNumberVar]
+            }
+            //let item = filteredItems![randomItemNumberVar]
             detailViewController.itemText = item.name
             detailViewController.nameOfList = listText
             if (item.text == "") || (item.text == " "){
@@ -356,11 +468,6 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
                         let intObj = IntegerObject()
                         intObj.value = addNewItem.arrayOfChosenTags[i]
                         realmManager.addIndexTagForItem(item: item, index: intObj)
-                        let indexnahovno = item.IndexOfTags[0]
-                        let nahonvohodnota = indexnahovno.value
-                        print(nahonvohodnota)
-                        let changedItem = realmManager.getItem(name: item.name)
-                        let hodnota = changedItem?.IndexOfTags[0].value
                     }
                 }
             }
@@ -369,5 +476,61 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-  
+    @IBAction func scrollToTop(_ sender: Any) {
+        if items?.count != 0{
+            let indPath = NSIndexPath(row: 0, section: 0)
+            tableView.scrollToRow(at: indPath as IndexPath, at: .middle, animated: true)
+        }
+        
+    }
+    
+    @IBAction func cancelChoosingTagsForFilter(segue: UIStoryboardSegue){
+        if segue.identifier == "cancelFilteringSegue"{
+            print("Cancel filtering")
+            arrayOfChosenTagsForFiltering.removeAll()
+            filteringIsActive = false
+            tableView.reloadData()
+        }
+    }
+    
+    @IBAction func filterByChosenTags(segue: UIStoryboardSegue){
+        if segue.identifier == "filterByTagsSegue"{
+            let filterByTagsController = segue.source as! FilterByTagsViewController
+            //ak nie je zvoleny ziadny tag
+            if filterByTagsController.arrayOfChosenTags.count == 0 || items?.count == 0 || items == nil{
+                //nie je co filtrovat
+                filteringIsActive = false
+                arrayOfChosenTagsForFiltering = filterByTagsController.arrayOfChosenTags
+                return
+            }else{
+                filteringIsActive = true
+                arrayOfChosenTagsForFiltering = filterByTagsController.arrayOfChosenTags
+                filteredItemsByTags = realmManager.filterByTag(arrayOfItems: items!, arrayOfIndexes: arrayOfChosenTagsForFiltering)
+                allFilteredItemsByChosenTags = filteredItemsByTags
+                searchBar.text = ""
+                searchBar.endEditing(true)
+                sortItems()
+                tableView.reloadData()
+                if filteredItemsByTags?.count != 0 && filteredItemsByTags != nil{
+                    scrollToTop(self)
+                }
+            }
+            
+        }
+    }
+    
+    @IBAction func chooseTagsForFilter(_ sender: Any) {
+        performSegue(withIdentifier: "chooseTagsForFilterSegue", sender: self)
+    }
+    
+    
+    @IBAction func cancelFilteringByTags(_ sender: Any) {
+        //premazanie pola na pamätania filtrovanych tagov
+        arrayOfChosenTagsForFiltering.removeAll()
+        realmManager.setFalseForFilteringInItems(arrayOfItems: items!)
+        filteringIsActive = false
+        sortItems()
+        tableView.reloadData()
+    }
+    
 }
