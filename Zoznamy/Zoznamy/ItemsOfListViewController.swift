@@ -527,7 +527,7 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func cancelFilteringByTags(_ sender: Any) {
         //premazanie pola na pamätania filtrovanych tagov
         arrayOfChosenTagsForFiltering.removeAll()
-        realmManager.setFalseForFilteringInItems(arrayOfItems: items!)
+        //realmManager.setFalseForFilteringInItems(arrayOfItems: items!)
         filteringIsActive = false
         sortItems()
         tableView.reloadData()

@@ -272,7 +272,6 @@ class RealmManager {
     
     func deleteTag(list: Lists, indexOfTag: Int){
         let realm = try! Realm()
-        //let tagToRemove = list.tags[indexOfTag]
         try! realm.write {
             //vymazanie tagu zo zoznamu
             list.tags.remove(at: indexOfTag)
@@ -288,7 +287,6 @@ class RealmManager {
                     indexOfDeletedTag = j
                 }
                 if itemWithChangingIndexTags.IndexOfTags[j].value > indexOfTag{
-                    print("aaa")
                     try! realm.write {
                         itemWithChangingIndexTags.IndexOfTags[j].value -= 1
                     }
@@ -302,49 +300,16 @@ class RealmManager {
         }
     }
     
-    //skusobna funkcia pre filtrovanie podla tagov
     func filterByTag(arrayOfItems: Results<Item>, arrayOfIndexes: [Int]) -> Results<Item>{
-        let realm = try! Realm()
-        
-        /*for i in 0..<arrayOfItems.count{
-            try! realm.write {
-                arrayOfItems[i].containTagFromFilter = false
-            }
-        }*/
-        setFalseForFilteringInItems(arrayOfItems: arrayOfItems)
-        
-        for i in 0..<arrayOfIndexes.count{
-            let array = arrayOfItems.filter("ANY IndexOfTags.value = %@", arrayOfIndexes[i])
-            for j in 0..<array.count{
-                try! realm.write {
-                    array[j].containTagFromFilter = true
-                }
-            }
+        var query: String = ""
+        var array: [String] = []
+        arrayOfIndexes.forEach {
+            array.append("ANY IndexOfTags.value = \($0)")
         }
-        let filteredArray = arrayOfItems.filter("containTagFromFilter == true")
-        return filteredArray
-    }
-    
-    func setFalseForFilteringInItems(arrayOfItems: Results<Item>){
-        let realm = try! Realm()
+        query = array.joined(separator: " OR ")
         
-        /*let array = arrayOfItems.filter("containTagFromFilter == true")
-        let count = array.count
-        for i in 0..<count{
-            try! realm.write {
-                array[i].containTagFromFilter = false
-            }
-        }*/
+        let array1 = arrayOfItems.filter(query)
         
-        
-        //funguje ale pomaly
-        for i in 0..<arrayOfItems.count{
-            if arrayOfItems[i].containTagFromFilter{
-                try! realm.write {
-                    arrayOfItems[i].containTagFromFilter = false
-                }
-            }
-        }
-        
+        return array1
     }
 }
