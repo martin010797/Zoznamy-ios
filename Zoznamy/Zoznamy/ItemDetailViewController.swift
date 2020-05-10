@@ -20,9 +20,11 @@ class ItemDetailViewController:  UIViewController{
     var itemDescription = ""
     var nameOfList = ""
     let realmManager = RealmManager()
+    var item: Item?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        item = realmManager.getItem(name: itemText)!
         itemLabel.text = itemText
         textViewDescription.text = itemDescription
         
@@ -55,7 +57,20 @@ class ItemDetailViewController:  UIViewController{
             if UserDefaults.standard.bool(forKey: "darkMode") {
                 self.view.backgroundColor = .black
                 viewFromScrollViewDetail.backgroundColor = .black
-                imageOfItem.image = UIImage(named: "noImageDark")
+                let str = item!.pathForImage
+                if item!.pathForImage == ""{
+                    imageOfItem.image = UIImage(named: "noImageDark")
+                }else{
+                    let imageUrl: URL = URL(fileURLWithPath: item!.pathForImage)
+                    guard FileManager.default.fileExists(atPath: item!.pathForImage),
+                        let imageData: Data = try? Data(contentsOf: imageUrl),
+                        let image = UIImage(data: imageData) else {
+                            return // No image found!
+                    }
+                    imageOfItem.image = image
+                }
+                textViewDescription.tintColor = .black
+                
                 textViewDescription.backgroundColor = .black
                 textViewDescription.textColor = .white
                 textViewTags.backgroundColor = .black
@@ -63,7 +78,20 @@ class ItemDetailViewController:  UIViewController{
             }else{
                 self.view.backgroundColor = .white
                 viewFromScrollViewDetail.backgroundColor = .white
-                imageOfItem.image = UIImage(named: "noImageLight")
+                if item!.pathForImage == ""{
+                    imageOfItem.image = UIImage(named: "noImageLight")
+                }else{
+                    let imageUrl: URL = URL(fileURLWithPath: item!.pathForImage)
+                    guard FileManager.default.fileExists(atPath: item!.pathForImage),
+                        let imageData: Data = try? Data(contentsOf: imageUrl),
+                        let image = UIImage(data: imageData) else {
+                            return // No image found!
+                    }
+                    imageOfItem.image = image
+                }
+                
+                textViewDescription.tintColor = .white
+                    
                 textViewDescription.backgroundColor = .white
                 textViewDescription.textColor = .black
                 textViewTags.backgroundColor = .white
@@ -73,7 +101,19 @@ class ItemDetailViewController:  UIViewController{
         }else{
             self.view.backgroundColor = .black
             viewFromScrollViewDetail.backgroundColor = .black
-            imageOfItem.image = UIImage(named: "noImageDark")
+            if item!.pathForImage == ""{
+                imageOfItem.image = UIImage(named: "noImageDark")
+            }else{
+                let imageUrl: URL = URL(fileURLWithPath: item!.pathForImage)
+                guard FileManager.default.fileExists(atPath: item!.pathForImage),
+                    let imageData: Data = try? Data(contentsOf: imageUrl),
+                    let image = UIImage(data: imageData) else {
+                        return // No image found!
+                }
+                imageOfItem.image = image
+            }
+            textViewDescription.tintColor = .black
+            
             textViewDescription.backgroundColor = .black
             textViewDescription.textColor = .white
             textViewTags.backgroundColor = .black
@@ -87,7 +127,17 @@ class ItemDetailViewController:  UIViewController{
             if UserDefaults.standard.bool(forKey: "darkMode") {
                 self.view.backgroundColor = .black
                 viewFromScrollViewDetail.backgroundColor = .black
-                imageOfItem.image = UIImage(named: "noImageDark")
+                if item!.pathForImage == ""{
+                    imageOfItem.image = UIImage(named: "noImageDark")
+                }else{
+                    let imageUrl: URL = URL(fileURLWithPath: item!.pathForImage)
+                    guard FileManager.default.fileExists(atPath: item!.pathForImage),
+                        let imageData: Data = try? Data(contentsOf: imageUrl),
+                        let image = UIImage(data: imageData) else {
+                            return // No image found!
+                    }
+                    imageOfItem.image = image
+                }
                 textViewDescription.backgroundColor = .black
                 textViewDescription.textColor = .white
                 textViewTags.backgroundColor = .black
@@ -95,7 +145,17 @@ class ItemDetailViewController:  UIViewController{
             }else{
                 self.view.backgroundColor = .white
                 viewFromScrollViewDetail.backgroundColor = .white
-                imageOfItem.image = UIImage(named: "noImageLight")
+                if item!.pathForImage == ""{
+                    imageOfItem.image = UIImage(named: "noImageLight")
+                }else{
+                    let imageUrl: URL = URL(fileURLWithPath: item!.pathForImage)
+                    guard FileManager.default.fileExists(atPath: item!.pathForImage),
+                        let imageData: Data = try? Data(contentsOf: imageUrl),
+                        let image = UIImage(data: imageData) else {
+                            return // No image found!
+                    }
+                    imageOfItem.image = image
+                }
                 textViewDescription.backgroundColor = .white
                 textViewDescription.textColor = .black
                 textViewTags.backgroundColor = .white
@@ -105,8 +165,19 @@ class ItemDetailViewController:  UIViewController{
         }else{
             self.view.backgroundColor = .black
             viewFromScrollViewDetail.backgroundColor = .black
-            imageOfItem.image = UIImage(named: "noImageDark")
+            if item!.pathForImage == ""{
+                imageOfItem.image = UIImage(named: "noImageDark")
+            }else{
+                let imageUrl: URL = URL(fileURLWithPath: item!.pathForImage)
+                guard FileManager.default.fileExists(atPath: item!.pathForImage),
+                    let imageData: Data = try? Data(contentsOf: imageUrl),
+                    let image = UIImage(data: imageData) else {
+                        return // No image found!
+                }
+                imageOfItem.image = image
+            }
             textViewDescription.backgroundColor = .black
+            
             textViewDescription.textColor = .white
             textViewTags.backgroundColor = .black
             textViewTags.textColor = .white

@@ -14,6 +14,9 @@ class Item: Object {
     @objc dynamic var name = ""
     @objc dynamic var date = NSDate()
     @objc dynamic var text  = ""
+    //skusobne ukladanie cesty k obrazku
+    //odkomentovat a DOKONCIT
+    @objc dynamic var pathForImage = ""
     
     //@objc dynamic var containTagFromFilter = false
     

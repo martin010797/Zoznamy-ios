@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "EEF432E1-064A-4E8A-8033-FA2C70FA3F79"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "C27984FB-38B8-40BE-84AC-0A1BBA5855DA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.373745"
+            timestampString = "591041218.693449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -22,6 +24,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "4C00BB31-02F4-4742-AF3D-5524324FF2C9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -38,11 +41,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "00077416-D9D2-4E28-9AAE-A8E973434A51"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/Item.swift"
-            timestampString = "590244336.374391"
+            timestampString = "591041218.6936671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
@@ -54,11 +58,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9481596C-47A3-4576-A35B-310C572DB070"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/Item.swift"
-            timestampString = "590244336.374452"
+            timestampString = "591041218.693741"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -67,6 +72,7 @@
             landmarkType = "3">
             <Locations>
                <Location
+                  uuid = "9481596C-47A3-4576-A35B-310C572DB070 - 97cea247332f369f"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -82,6 +88,7 @@
                   offsetFromSymbolStart = "127">
                </Location>
                <Location
+                  uuid = "9481596C-47A3-4576-A35B-310C572DB070 - 4955b87388162e83"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -97,6 +104,7 @@
                   offsetFromSymbolStart = "148">
                </Location>
                <Location
+                  uuid = "9481596C-47A3-4576-A35B-310C572DB070 - 8e6c8b1aec3bd838"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -112,6 +120,7 @@
                   offsetFromSymbolStart = "26">
                </Location>
                <Location
+                  uuid = "9481596C-47A3-4576-A35B-310C572DB070 - b99bfdac25d82da9"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -127,6 +136,7 @@
                   offsetFromSymbolStart = "31">
                </Location>
                <Location
+                  uuid = "9481596C-47A3-4576-A35B-310C572DB070 - 48717ef343e375f6"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -142,6 +152,7 @@
                   offsetFromSymbolStart = "25">
                </Location>
                <Location
+                  uuid = "9481596C-47A3-4576-A35B-310C572DB070 - 5f46b7ca9e28fc21"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -157,6 +168,7 @@
                   offsetFromSymbolStart = "37">
                </Location>
                <Location
+                  uuid = "9481596C-47A3-4576-A35B-310C572DB070 - bc40390e6dbc86df"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -172,6 +184,7 @@
                   offsetFromSymbolStart = "49">
                </Location>
                <Location
+                  uuid = "9481596C-47A3-4576-A35B-310C572DB070 - aaaf648806aeb348"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -192,6 +205,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "083121C0-7F34-42FF-84C2-EB9CD1ED2921"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -205,6 +219,7 @@
             landmarkType = "3">
             <Locations>
                <Location
+                  uuid = "083121C0-7F34-42FF-84C2-EB9CD1ED2921 - ac49a5a3cfb40ca5"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -220,6 +235,7 @@
                   offsetFromSymbolStart = "127">
                </Location>
                <Location
+                  uuid = "083121C0-7F34-42FF-84C2-EB9CD1ED2921 - d33ead326dd308a9"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -235,6 +251,7 @@
                   offsetFromSymbolStart = "148">
                </Location>
                <Location
+                  uuid = "083121C0-7F34-42FF-84C2-EB9CD1ED2921 - 611013a516a0e3b9"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -250,6 +267,7 @@
                   offsetFromSymbolStart = "25">
                </Location>
                <Location
+                  uuid = "083121C0-7F34-42FF-84C2-EB9CD1ED2921 - c40d9abb932510a2"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -265,6 +283,7 @@
                   offsetFromSymbolStart = "37">
                </Location>
                <Location
+                  uuid = "083121C0-7F34-42FF-84C2-EB9CD1ED2921 - 9cc1155884959258"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -280,6 +299,7 @@
                   offsetFromSymbolStart = "49">
                </Location>
                <Location
+                  uuid = "083121C0-7F34-42FF-84C2-EB9CD1ED2921 - 9c1e4e9514d87edb"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -300,11 +320,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6E6A45BD-C0BD-4BE8-9B78-6427DAAF3087"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.374525"
+            timestampString = "591041218.693833"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
@@ -316,11 +337,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "64B4EF9D-D51C-417E-A73F-1C40A5B820CE"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.374963"
+            timestampString = "591041218.693889"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -332,11 +354,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "F99328DA-1F93-4970-8DF8-30D5539DE13B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.375428"
+            timestampString = "591041218.693936"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "144"
@@ -348,19 +371,21 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "048BABEA-E9C2-4C8B-B272-EFED2DD4A807"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.375862"
+            timestampString = "591041218.693996"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
             endingLineNumber = "13"
-            landmarkName = "ItemsOfListViewController"
-            landmarkType = "3">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
+                  uuid = "048BABEA-E9C2-4C8B-B272-EFED2DD4A807 - b4236c44c72c0090"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -376,6 +401,7 @@
                   offsetFromSymbolStart = "86">
                </Location>
                <Location
+                  uuid = "048BABEA-E9C2-4C8B-B272-EFED2DD4A807 - 6a06c0e20eaa3cac"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -391,6 +417,7 @@
                   offsetFromSymbolStart = "106">
                </Location>
                <Location
+                  uuid = "048BABEA-E9C2-4C8B-B272-EFED2DD4A807 - 606957feaf886793"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -406,6 +433,7 @@
                   offsetFromSymbolStart = "69">
                </Location>
                <Location
+                  uuid = "048BABEA-E9C2-4C8B-B272-EFED2DD4A807 - b356eb607fdb09eb"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -421,6 +449,7 @@
                   offsetFromSymbolStart = "72">
                </Location>
                <Location
+                  uuid = "048BABEA-E9C2-4C8B-B272-EFED2DD4A807 - 82f4e0f0aae477db"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -436,6 +465,7 @@
                   offsetFromSymbolStart = "219">
                </Location>
                <Location
+                  uuid = "048BABEA-E9C2-4C8B-B272-EFED2DD4A807 - 753e3b4be31a203"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -456,43 +486,46 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D9EB4803-02B8-4C0D-B524-18C6B335082C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.375989"
+            timestampString = "591041218.6940939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "846A18BF-0F65-4EE3-AE1B-E00BA6940A2F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.376119"
+            timestampString = "591041218.694193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "78AFA7F4-E860-44EC-B9DB-811A017F952B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.376233"
+            timestampString = "591041218.694304"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -504,11 +537,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "22F8BC0B-BF9C-400A-80CE-17760166A82C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.376663"
+            timestampString = "591041218.6943671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
@@ -520,6 +554,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "962B4039-B458-4F17-881D-F68F7DB842DF"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -536,11 +571,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "A4F7D412-CD80-4E66-979E-23E65F6DEFA4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.377117"
+            timestampString = "591041218.694436"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "163"
@@ -552,11 +588,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D0B07E2A-B59C-4876-BE78-581B01EABABD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.377543"
+            timestampString = "591041218.694499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "119"
@@ -568,38 +605,41 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "CCA2A0D4-77A2-446D-BA9F-EE7D73AA8B00"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.377965"
+            timestampString = "591041218.694563"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "418"
-            endingLineNumber = "418"
-            landmarkName = "saveNewItem(segue:)"
-            landmarkType = "7">
+            startingLineNumber = "420"
+            endingLineNumber = "420"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "61FE5DD2-F3A1-4D09-AA79-9432DDE43EC1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.378082"
+            timestampString = "591041218.6946729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "419"
-            endingLineNumber = "419"
-            landmarkName = "saveNewItem(segue:)"
-            landmarkType = "7">
+            startingLineNumber = "421"
+            endingLineNumber = "421"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "96FF53B8-5511-4972-B3F0-FD45BF6E831D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -616,11 +656,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "CD1A69DF-0BC4-4C6F-905A-368B9911AA54"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.378214"
+            timestampString = "591041218.694785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -632,15 +673,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "40945BF8-97C7-4E1C-9EDB-98F15E3B41D2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.378634"
+            timestampString = "591041218.6948479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "deleteList(list:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -648,6 +690,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "AA4C05FD-FD3A-444B-A99F-1E02477CCAB5"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -664,70 +707,75 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "11289243-9E6F-4B20-A668-5BE3E7365759"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.379082"
+            timestampString = "591041218.6949151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "228"
             endingLineNumber = "228"
-            landmarkName = "randomItemOfList(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1FE38041-9ADC-4C4B-AEE3-F1DA3A81820C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.379189"
+            timestampString = "591041218.694988"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "354"
             endingLineNumber = "354"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "316F68F7-B4FD-473E-9D54-6982424865FD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.379303"
+            timestampString = "591041218.695056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "344"
             endingLineNumber = "344"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "7E162C26-1E14-4C78-94D6-E994B53AF77F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.3794039"
+            timestampString = "591041218.695136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B0D4D6E8-FA51-450E-A8CC-7A7259B5B2AE"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -744,95 +792,101 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "E18F537A-F297-4AB8-B067-0B2C2B425AB3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.3795249"
+            timestampString = "591041218.6952339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "271"
             endingLineNumber = "271"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "8C3EB6A0-B942-4E69-9B45-61C1086FAC36"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.379629"
+            timestampString = "591041218.695307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "270"
             endingLineNumber = "270"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "044587D9-AC60-41FC-9663-8BF9801DFFB6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.379727"
+            timestampString = "591041218.695361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "273"
             endingLineNumber = "273"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "3EE4E8EF-344C-4DFE-8F5F-EA5EFD449387"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.3798259"
+            timestampString = "591041218.695429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "426"
-            endingLineNumber = "426"
-            landmarkName = "saveNewItem(segue:)"
-            landmarkType = "7">
+            startingLineNumber = "428"
+            endingLineNumber = "428"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "4306F3F8-5DBE-4B46-BA92-A0C64D1300F6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.379925"
+            timestampString = "591041218.695522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "417"
-            endingLineNumber = "417"
-            landmarkName = "saveNewItem(segue:)"
-            landmarkType = "7">
+            startingLineNumber = "419"
+            endingLineNumber = "419"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1CD5F723-FA97-4783-A60B-6270C33D4A4E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/addNewItemViewController.swift"
-            timestampString = "590244336.380025"
+            timestampString = "591041218.6956151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "doneButtonTextView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -840,15 +894,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "FFB0C420-54E1-4C5E-86B0-505486457DAB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/addNewItemViewController.swift"
-            timestampString = "590244336.3800941"
+            timestampString = "591041218.6957459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
             landmarkName = "changeIndexTags(segue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -856,15 +911,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "AE01AE66-7D09-42A8-9AA7-1E3F27921115"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/addNewItemViewController.swift"
-            timestampString = "590244336.3801579"
+            timestampString = "591041218.695814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
             landmarkName = "changeIndexTags(segue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -872,15 +928,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "732E359B-2E9E-4935-874F-40D4C9AF8649"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/addNewItemViewController.swift"
-            timestampString = "590244336.380222"
+            timestampString = "591041218.695889"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -888,15 +945,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1B01CF61-F6F9-42FA-A41E-260EF9AE4933"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/addNewItemViewController.swift"
-            timestampString = "590244336.380288"
+            timestampString = "591041218.69595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -904,47 +962,50 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "082736F7-6005-451F-A18F-4D47101BEBC6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.380352"
+            timestampString = "591041218.6960239"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "429"
-            endingLineNumber = "429"
-            landmarkName = "saveNewItem(segue:)"
-            landmarkType = "7">
+            startingLineNumber = "431"
+            endingLineNumber = "431"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "BB9192AF-C31D-44F8-A0A2-D4D5D3338DD4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.38045"
+            timestampString = "591041218.696129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "430"
-            endingLineNumber = "430"
-            landmarkName = "saveNewItem(segue:)"
-            landmarkType = "7">
+            startingLineNumber = "432"
+            endingLineNumber = "432"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "2C7AC6A0-0563-4B65-B18A-B88D2A682D58"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.380549"
+            timestampString = "591041218.696193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "addIndexTagForItem(item:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -952,11 +1013,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "4EB0C4FE-F221-4113-94ED-4D739BCDC4FD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.380928"
+            timestampString = "591041218.696236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -968,27 +1030,29 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "432EC5E6-C7C0-4466-8B71-AD20F45E27F2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.381297"
+            timestampString = "591041218.69631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "432"
-            endingLineNumber = "432"
-            landmarkName = "saveNewItem(segue:)"
-            landmarkType = "7">
+            startingLineNumber = "434"
+            endingLineNumber = "434"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "7FF81738-A3DE-4AEC-9D8C-CE1A4AA445A9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.381402"
+            timestampString = "591041218.696382"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
@@ -1000,11 +1064,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "4ADB156F-C15B-4C23-B39C-110ABABADB13"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.381771"
+            timestampString = "591041218.6964279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
@@ -1016,6 +1081,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "E6145783-509D-422D-B8F0-A6B5608581C7"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1032,6 +1098,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "5E96E076-628A-4CD8-BE3C-BD6F703CE524"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1048,15 +1115,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "01180C9B-719B-41A0-B32C-548DD5D7D2F2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.382392"
+            timestampString = "591041218.696501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
             landmarkName = "deleteTag(list:indexOfTag:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1064,15 +1132,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "13CB7C37-58A4-4EDF-B2AE-7D25327B8987"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemDetailViewController.swift"
-            timestampString = "590244336.382814"
+            timestampString = "591041218.696553"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1080,6 +1149,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1E97E987-F270-486C-AAEF-319BB38D15BB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1093,6 +1163,7 @@
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "1E97E987-F270-486C-AAEF-319BB38D15BB - f1beb48c365b94a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1108,6 +1179,7 @@
                   offsetFromSymbolStart = "298">
                </Location>
                <Location
+                  uuid = "1E97E987-F270-486C-AAEF-319BB38D15BB - f1beb48c365b94a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1128,6 +1200,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9F392DB8-B871-4202-8DCE-BCF43353E08E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1144,6 +1217,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "3BAC3DFA-0B4C-47CD-8CDA-6696675F2801"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1160,15 +1234,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "8994125F-4E9C-485F-934C-BDC50F50EEF9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/addNewItemViewController.swift"
-            timestampString = "590244336.383206"
+            timestampString = "591041218.697057"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
+            startingLineNumber = "336"
+            endingLineNumber = "336"
             landmarkName = "changeIndexTags(segue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1176,6 +1251,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "42DEE648-62FB-4789-89B2-BBF4CC5DE4EE"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1192,15 +1268,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "C82F8955-4D81-4B2A-B1C4-C0958964209A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.3834"
+            timestampString = "591041218.6971461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "deleteTag(list:indexOfTag:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1208,19 +1285,21 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9103BA3A-D6AD-4F52-8C7A-E750D6FD6A04"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/Realm/RealmManager.swift"
-            timestampString = "590244336.383893"
+            timestampString = "591041218.697192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
             landmarkName = "deleteTag(list:indexOfTag:)"
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "9103BA3A-D6AD-4F52-8C7A-E750D6FD6A04 - 74045a4e9b60d27c"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1236,6 +1315,7 @@
                   offsetFromSymbolStart = "2077">
                </Location>
                <Location
+                  uuid = "9103BA3A-D6AD-4F52-8C7A-E750D6FD6A04 - 85487bb554f30d61"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1256,48 +1336,136 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "FB5EAAB7-391F-4E14-B566-711701B1AEEB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.384272"
+            timestampString = "591041218.697228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "501"
-            endingLineNumber = "501"
-            landmarkName = "filterByChosenTags(segue:)"
+            startingLineNumber = "536"
+            endingLineNumber = "536"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E12A8E45-E61B-44A1-B8E0-27A8FCDA8D28"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/ItemsOfListViewController.swift"
+            timestampString = "591041218.697287"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "541"
+            endingLineNumber = "541"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1E0BFE3-D8AC-4733-9F5B-8D88CF3948E4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/ItemsOfListViewController.swift"
+            timestampString = "591041218.6973571"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "563"
+            endingLineNumber = "563"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F8204DE-56E3-47EE-9A59-D34C611F54CD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/ItemDetailViewController.swift"
+            timestampString = "591041218.697428"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "CD9E2D39-0C94-48B6-B917-457FD3A32116"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.384342"
+            filePath = "Zoznamy/addNewItemViewController.swift"
+            timestampString = "591041218.697679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "506"
-            endingLineNumber = "506"
-            landmarkName = "filterByChosenTags(segue:)"
+            startingLineNumber = "365"
+            endingLineNumber = "365"
+            landmarkName = "saveItem(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "EC4571AB-2205-4165-8991-A1A2741B21EB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Zoznamy/ItemsOfListViewController.swift"
-            timestampString = "590244336.384419"
+            filePath = "Zoznamy/addNewItemViewController.swift"
+            timestampString = "591041218.697727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "528"
-            endingLineNumber = "528"
-            landmarkName = "cancelFilteringByTags(_:)"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
+            landmarkName = "saveItem(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F6BA81A8-ED97-4A65-A46B-4C3448F6542B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/addNewItemViewController.swift"
+            timestampString = "591041218.697789"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "084A62B6-7EC6-4AAE-88B2-9CC44E040CFE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoznamy/ItemDetailViewController.swift"
+            timestampString = "591041218.697871"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

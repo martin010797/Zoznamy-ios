@@ -414,6 +414,8 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
             let item = Item()
             item.name = addNewItem.itemTextField.text!
             item.text = addNewItem.descriptionForItem.text!
+            //nove odkomentovat a DOKONCIT
+            item.pathForImage = addNewItem.pathOfImage
             
             if addNewItem.editItem{
                 let oldItem = addNewItem.item
@@ -430,8 +432,22 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
                 //vytvorene dve jemne pozmenene funkcie v realm manageri
                 if oldItem.name == item.name{
                     if realmManager.itemDoesExistsInListSameName(item: item, list: listOfItems!, oldItem: oldItem) == nil{
-                        //zavola funkciu na update zo stareho na novy
+                        if addNewItem.chosenImage{
+                            if vysledok.pathForImage != ""{
+                                let urlEditedImage: URL = URL(fileURLWithPath: vysledok.pathForImage)
+                                try? FileManager.default.removeItem(at: urlEditedImage)
+                            }
+                            let imageUrl: URL = URL(fileURLWithPath: addNewItem.pathOfImage)
+                            try? addNewItem.imageView.image!.pngData()?.write(to: imageUrl)
+                        }
                         realmManager.updateItem(oldItem: vysledok, toItem: item)
+                        //rozrobene ukladanie obrazka odkomentovat a DOKONCIT
+                        //ak by bolo v poriadku tak by sa dalo ku kazdemu updatu alebo ukladaniu v tejto fkcii
+                        /*if addNewItem.chosenImage{
+                         zmazat povodny obrazok
+                         let imageUrl: URL = URL(fileURLWithPath: addNewItem.pathOfImage)
+                         try? addNewItem.imageView.image!.pngData()?.write(to: imageUrl)
+                         }*/
                         realmManager.removeIndexTagsForItem(item: vysledok)
                         for i in 0..<addNewItem.arrayOfChosenTags.count{
                             let intObj = IntegerObject()
@@ -445,6 +461,14 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
                     }
                 }else{
                     if realmManager.itemDoesExistsInList(item: item, list: listOfItems!) == nil{
+                        if addNewItem.chosenImage{
+                            if vysledok.pathForImage != ""{
+                                let urlEditedImage: URL = URL(fileURLWithPath: vysledok.pathForImage)
+                                try? FileManager.default.removeItem(at: urlEditedImage)
+                            }
+                            let imageUrl: URL = URL(fileURLWithPath: addNewItem.pathOfImage)
+                            try? addNewItem.imageView.image!.pngData()?.write(to: imageUrl)
+                        }
                         //zavola funkciu na update zo stareho na novy
                         realmManager.updateItem(oldItem: vysledok, toItem: item)
                         realmManager.removeIndexTagsForItem(item: vysledok)
@@ -469,6 +493,13 @@ class ItemsOfListViewController: UIViewController, UITableViewDelegate, UITableV
                         intObj.value = addNewItem.arrayOfChosenTags[i]
                         realmManager.addIndexTagForItem(item: item, index: intObj)
                     }
+                    //rozrobene ukladanie obrazka odkomentovat a DOKONCIT
+                    //ak by bolo v poriadku tak by sa dalo ku kazdemu updatu alebo ukladaniu v tejto fkcii
+                    if addNewItem.chosenImage{
+                        let imageUrl: URL = URL(fileURLWithPath: addNewItem.pathOfImage)
+                        try? addNewItem.imageView.image!.pngData()?.write(to: imageUrl)
+                     }
+                    
                 }
             }
             

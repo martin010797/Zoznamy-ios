@@ -17,6 +17,9 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
     var nameOfList = ""
     var arrayOfChosenTags = [Int]()
     let realmManager = RealmManager()
+    var pathOfImage = ""
+    var chosenImage = false
+    var editedItem: Item?
     
     @IBOutlet weak var itemTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
@@ -42,6 +45,7 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
         textViewTags.delegate = self
         
         if editItem == true{
+            editedItem = realmManager.getItem(name: itemText)
             itemTextField.text = itemText
             descriptionForItem.text = itemDescription
             //povodne
@@ -68,7 +72,6 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
                 }else{
                     textViewTags.text = textViewTags.text + " #" + nameOfTag
                 }
-                
             }
         }else{
             descriptionForItem.text = "No description"
@@ -80,7 +83,22 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
         //nastavovanie farby pozadia
         if UserDefaults.standard.object(forKey: "darkMode") != nil{
             if UserDefaults.standard.bool(forKey: "darkMode") {
-                imageView.image = UIImage(named: "noImageDark")
+                //changed
+                if editItem{
+                    if editedItem!.pathForImage == ""{
+                        imageView.image = UIImage(named: "noImageDark")
+                    }else{
+                        let imageUrl: URL = URL(fileURLWithPath: editedItem!.pathForImage)
+                        guard FileManager.default.fileExists(atPath: editedItem!.pathForImage),
+                            let imageData: Data = try? Data(contentsOf: imageUrl),
+                            let image = UIImage(data: imageData) else {
+                                return // No image found!
+                        }
+                        imageView.image = image
+                    }
+                }else{
+                    imageView.image = UIImage(named: "noImageDark")
+                }
                 self.view.backgroundColor = .black
                 viewFromScrollView.backgroundColor = .black
                 descriptionForItem.textColor = .white
@@ -89,14 +107,45 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
                 //descriptionForItem.backgroundColor = .gray
             }else{
                 self.view.backgroundColor = .white
-                imageView.image = UIImage(named: "noImageLight")
+                //changed
+                if editItem{
+                    if editedItem!.pathForImage == ""{
+                        imageView.image = UIImage(named: "noImageLight")
+                    }else{
+                        let imageUrl: URL = URL(fileURLWithPath: editedItem!.pathForImage)
+                        guard FileManager.default.fileExists(atPath: editedItem!.pathForImage),
+                            let imageData: Data = try? Data(contentsOf: imageUrl),
+                            let image = UIImage(data: imageData) else {
+                                return // No image found!
+                        }
+                        imageView.image = image
+                    }
+                }else{
+                    imageView.image = UIImage(named: "noImageLight")
+                }
                 viewFromScrollView.backgroundColor = .white
                 //descriptionForItem.backgroundColor = .gray
                 textViewTags.backgroundColor = .white
             }
             
         }else{
-            imageView.image = UIImage(named: "noImageDark")
+            //changed
+            if editItem{
+                if editedItem!.pathForImage == ""{
+                    imageView.image = UIImage(named: "noImageDark")
+                }else{
+                    let imageUrl: URL = URL(fileURLWithPath: editedItem!.pathForImage)
+                    guard FileManager.default.fileExists(atPath: editedItem!.pathForImage),
+                        let imageData: Data = try? Data(contentsOf: imageUrl),
+                        let image = UIImage(data: imageData) else {
+                            return // No image found!
+                    }
+                    imageView.image = image
+                }
+            }else{
+                imageView.image = UIImage(named: "noImageDark")
+            }
+            
             self.view.backgroundColor = .black
             viewFromScrollView.backgroundColor = .black
             descriptionForItem.textColor = .white
@@ -205,6 +254,7 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
         imageView.image = image
+        chosenImage = true
         
         picker.dismiss(animated: true, completion: nil)
     }
@@ -272,6 +322,14 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
             tagsViewController.nameOfList = nameOfList
             tagsViewController.arrayOfChosenTags = arrayOfChosenTags
         }
+        if segue.identifier == "saveNewItemSegue"{
+            if chosenImage{
+                //vymysliet ako pomenovavat
+                let imageName = nameOfList + itemTextField.text!
+                let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName).png"
+                pathOfImage = imagePath
+            }
+        }
     }
     
     @IBAction func changeIndexTags(segue: UIStoryboardSegue){
@@ -298,4 +356,18 @@ class addNewItemViewController: UIViewController, UITextFieldDelegate, UIImagePi
         }
     }
     
+    @IBAction func saveItem(_ sender: Any) {
+        
+        print("saving")
+        print("sav")
+        //ukladanie obrazka
+        if chosenImage{
+            //vymysliet ako pomenovavat
+            let imageName = nameOfList + itemTextField.text!
+            let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName).png"
+            pathOfImage = imagePath
+        }
+        //let imageUrl: URL = URL(fileURLWithPath: imagePath)
+        //koniec ukladania
+    }
 }

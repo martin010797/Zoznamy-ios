@@ -167,6 +167,8 @@ class RealmManager {
         try! realm.write {
             item.name = newItem.name
             item.text = newItem.text
+            //nove odkomentovat a DOKONCIT
+            item.pathForImage = newItem.pathForImage
         }
     }
     
